@@ -1,0 +1,58 @@
+.location{
+  padding: 1rem;
+  margin: 1rem;
+  background-color: rgba(0,0,0, 0.3);
+
+  position: fixed;
+  left:0;
+  top: 5rem;
+  width: 15rem;
+  height: 85vh;
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    &__my {
+      & h1 {
+        font-family: $font-primary;
+        text-transform: uppercase;
+        color: $color-lightgrey;
+        font-size: 1.6rem;
+        padding: 2rem .5rem .5rem .5rem;
+        border-bottom: 1px solid $color-lightgrey;
+
+      }
+
+    }
+    &__world{
+      & h1 {
+        font-family: $font-primary;
+        text-transform: uppercase;
+        color: $color-lightgrey;
+        font-size: 1.2rem;
+        padding: 2rem .5rem .5rem .5rem;
+        border-bottom: 1px solid $color-lightgrey;
+
+      }
+    }
+  }
+  &__item-box{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    &-location{
+      font-family: $font-primary;
+      color: #fff;
+      font-size: 1.2rem;
+      padding: .3rem .5rem;
+      & a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+
+    }
+  }
+}

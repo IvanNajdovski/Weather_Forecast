@@ -1,0 +1,65 @@
+.navigation{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background-color: rgba(0,0,0, 0.3);
+  &__box{
+    padding: .5rem 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo{
+    overflow: hidden;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__img{
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+  &__form{
+    display: flex;
+    align-items: center;
+    &-label{
+      color: $color-lightgrey;
+      font-size: 1.6rem;
+      font-family: $font-second;
+
+      & > .fas{
+
+      }
+      & span{
+        //float: left;
+        transform: translateX(50px);
+      }
+
+    }
+    &-input{
+      width: 20rem;
+      background-color: transparent;
+      border: none;
+      padding: .5rem 1rem;
+      border-bottom: 1px solid $color-lightgrey;
+      outline: none;
+      margin: 0 1rem;
+
+    }
+    &-submit{
+      border: none;
+      border-radius: 5px;
+
+      background-color: #6a6478;
+      padding: .5rem 2rem;
+      font-family: $font-primary;
+      font-size: .9rem;
+      font-weight: 400;
+      //text-transform: uppercase;
+      color: $color-lightgrey;
+    }
+  }
+}

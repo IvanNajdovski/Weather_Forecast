@@ -1,0 +1,49 @@
+.forecast{
+  width: 80rem;
+  z-index: 5;
+  position: absolute;
+  top: 50rem;
+  left: 17rem;
+  display: flex;
+  margin: .5rem;
+  &-box-left{
+    flex: 1 1 40%;
+    margin: .5rem;
+
+    display: flex;
+    flex-direction: column;
+    & > *{
+      margin: .5rem;
+
+    }
+
+  }
+  &-box-right{
+    flex: 1 1 40%;
+    margin: .5rem;
+
+    display: flex;
+    flex-direction: column;
+    & > *{
+      margin: .5rem;
+
+    }
+
+  }
+  &-box{
+    &-temperature{
+      width: 100%;
+      flex : 1;
+      background-color: rgba(0,0,0, 0.3);
+      height: 40rem;
+      //width: 30rem;
+    }
+    &-details{
+      width: 100%;
+      flex:1;
+      //width: 30rem;
+      background-color: rgba(0,0,0, 0.3);
+      height: 40rem;
+    }
+  }
+}

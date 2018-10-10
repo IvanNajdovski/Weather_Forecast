@@ -1,0 +1,123 @@
+.content{
+  position: absolute;
+  z-index: 2;
+  left:17rem;
+  top:5rem;
+  display: flex;
+  flex-direction: column;
+  &__location-box{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem 6rem 2rem;
+    &-header{
+      font-family: $font-second;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 3px 3px 3px #000;
+      padding-bottom: 1rem;
+    }
+    &-country{
+      font-family: $font-second;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 3px 3px 3px #000;
+      padding-bottom: 1rem;
+    }
+    &-time{
+
+        font-family: $font-second;
+        font-size: 1rem;
+        font-weight: 300;
+        color: #fff;
+        text-shadow: 3px 3px 3px #000;
+
+    }
+  }
+  &__weather-box{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem 6rem 2rem;
+    &-weather{
+      display: flex;
+      align-items: center;
+      padding-bottom: 2rem;
+      &-icon{
+        height: 3rem;
+        width: 3rem;
+        margin-right: 2rem;
+        & img{
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+        }
+      }
+      &-status{
+        & p{
+          font-family: $font-second;
+          font-size: 1.4rem;
+
+          font-weight: 400;
+          color: #fff;
+          text-shadow: 3px 3px 3px #000;
+
+        }
+      }
+    }
+    &-temperature{
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      &-high{
+        font-family: $font-second;
+        font-size: 2rem;
+
+        font-weight: 300;
+        color: #fff;
+        text-shadow: 3px 3px 3px #000;
+        padding-right: 1ram;
+
+      }
+      &-low{
+        font-family: $font-second;
+        font-size: 2rem;
+
+        font-weight: 300;
+        color: #fff;
+        text-shadow: 3px 3px 3px #000;
+      }
+    }
+    &-current{
+      display: flex;
+      align-items: center;
+      &-number{
+        font-family: $font-second;
+        font-size: 3rem;
+        font-weight: 300;
+        color: #fff;
+        padding-right: .5rem;
+      }
+      &-measure{
+        height: 8rem;
+        color:#fff;
+        display: flex;
+        font-weight: 300;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 2rem;
+        & h1{
+          height: 4rem;
+          width: 4rem;
+          border: 1px solid $color-lightgrey;
+
+          border-radius: 5px;
+         display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

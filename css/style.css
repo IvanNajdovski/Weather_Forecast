@@ -1,0 +1,276 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  position: relative; }
+
+.navigation {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3); }
+  .navigation__box {
+    padding: .5rem 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .navigation__logo {
+    overflow: hidden;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .navigation__logo__img {
+      width: 100%;
+      height: auto;
+      object-fit: cover; }
+  .navigation__form {
+    display: flex;
+    align-items: center; }
+    .navigation__form-label {
+      color: lightgray;
+      font-size: 1.6rem;
+      font-family: "Bai Jamjuree"; }
+      .navigation__form-label span {
+        transform: translateX(50px); }
+    .navigation__form-input {
+      width: 20rem;
+      background-color: transparent;
+      border: none;
+      padding: .5rem 1rem;
+      border-bottom: 1px solid lightgray;
+      outline: none;
+      margin: 0 1rem; }
+    .navigation__form-submit {
+      border: none;
+      border-radius: 5px;
+      background-color: #6a6478;
+      padding: .5rem 2rem;
+      font-family: "Niramit";
+      font-size: .9rem;
+      font-weight: 400;
+      color: lightgray; }
+
+.background__box {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-position: cover;
+  background-position: center; }
+  .background__box.sunny {
+    background-image: url("../img/rain_day.jpg"); }
+
+.forecast {
+  width: 80rem;
+  z-index: 5;
+  position: absolute;
+  top: 50rem;
+  left: 17rem;
+  display: flex;
+  margin: .5rem; }
+  .forecast-box-left {
+    flex: 1 1 40%;
+    margin: .5rem;
+    display: flex;
+    flex-direction: column; }
+    .forecast-box-left > * {
+      margin: .5rem; }
+  .forecast-box-right {
+    flex: 1 1 40%;
+    margin: .5rem;
+    display: flex;
+    flex-direction: column; }
+    .forecast-box-right > * {
+      margin: .5rem; }
+  .forecast-box-temperature {
+    width: 100%;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 40rem; }
+  .forecast-box-details {
+    width: 100%;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 40rem; }
+
+.location {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  left: 0;
+  top: 5rem;
+  width: 15rem;
+  height: 85vh; }
+  .location__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; }
+    .location__box__my h1 {
+      font-family: "Niramit";
+      text-transform: uppercase;
+      color: lightgray;
+      font-size: 1.6rem;
+      padding: 2rem .5rem .5rem .5rem;
+      border-bottom: 1px solid lightgray; }
+    .location__box__world h1 {
+      font-family: "Niramit";
+      text-transform: uppercase;
+      color: lightgray;
+      font-size: 1.2rem;
+      padding: 2rem .5rem .5rem .5rem;
+      border-bottom: 1px solid lightgray; }
+  .location__item-box {
+    list-style: none;
+    display: flex;
+    flex-direction: column; }
+    .location__item-box-location {
+      font-family: "Niramit";
+      color: #fff;
+      font-size: 1.2rem;
+      padding: .3rem .5rem; }
+      .location__item-box-location a {
+        text-decoration: none;
+        color: inherit; }
+
+.content {
+  position: absolute;
+  z-index: 2;
+  left: 17rem;
+  top: 5rem;
+  display: flex;
+  flex-direction: column; }
+  .content__location-box {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem 6rem 2rem; }
+    .content__location-box-header {
+      font-family: "Bai Jamjuree";
+      font-size: 3rem;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 3px 3px 3px #000;
+      padding-bottom: 1rem; }
+    .content__location-box-country {
+      font-family: "Bai Jamjuree";
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 3px 3px 3px #000;
+      padding-bottom: 1rem; }
+    .content__location-box-time {
+      font-family: "Bai Jamjuree";
+      font-size: 1rem;
+      font-weight: 300;
+      color: #fff;
+      text-shadow: 3px 3px 3px #000; }
+  .content__weather-box {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem 6rem 2rem; }
+    .content__weather-box-weather {
+      display: flex;
+      align-items: center;
+      padding-bottom: 2rem; }
+      .content__weather-box-weather-icon {
+        height: 3rem;
+        width: 3rem;
+        margin-right: 2rem; }
+        .content__weather-box-weather-icon img {
+          width: 100%;
+          height: auto;
+          object-fit: contain; }
+      .content__weather-box-weather-status p {
+        font-family: "Bai Jamjuree";
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: #fff;
+        text-shadow: 3px 3px 3px #000; }
+    .content__weather-box-temperature {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly; }
+      .content__weather-box-temperature-high {
+        font-family: "Bai Jamjuree";
+        font-size: 2rem;
+        font-weight: 300;
+        color: #fff;
+        text-shadow: 3px 3px 3px #000;
+        padding-right: 1ram; }
+      .content__weather-box-temperature-low {
+        font-family: "Bai Jamjuree";
+        font-size: 2rem;
+        font-weight: 300;
+        color: #fff;
+        text-shadow: 3px 3px 3px #000; }
+    .content__weather-box-current {
+      display: flex;
+      align-items: center; }
+      .content__weather-box-current-number {
+        font-family: "Bai Jamjuree";
+        font-size: 3rem;
+        font-weight: 300;
+        color: #fff;
+        padding-right: .5rem; }
+      .content__weather-box-current-measure {
+        height: 8rem;
+        color: #fff;
+        display: flex;
+        font-weight: 300;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 2rem; }
+        .content__weather-box-current-measure h1 {
+          height: 4rem;
+          width: 4rem;
+          border: 1px solid lightgray;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+
+.forecast {
+  width: 80rem;
+  z-index: 5;
+  position: absolute;
+  top: 50rem;
+  left: 17rem;
+  display: flex;
+  margin: .5rem; }
+  .forecast-box-left {
+    flex: 1 1 40%;
+    margin: .5rem;
+    display: flex;
+    flex-direction: column; }
+    .forecast-box-left > * {
+      margin: .5rem; }
+  .forecast-box-right {
+    flex: 1 1 40%;
+    margin: .5rem;
+    display: flex;
+    flex-direction: column; }
+    .forecast-box-right > * {
+      margin: .5rem; }
+  .forecast-box-temperature {
+    width: 100%;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 40rem; }
+  .forecast-box-details {
+    width: 100%;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 40rem; }

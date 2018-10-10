@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree:300,400,700|Niramit:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<section class="background">
+    <div class="background__box sunny">
+
+    </div>
+</section>
+<nav class="navigation">
+    <div class="navigation__box">
+        <form class="navigation__form" action="/" method="POST">
+            <label class="navigation__form-label" for="team_name"> <i class="fas fa-bolt"></i>
+                <span>Weather </span> </label>
+            <input class="navigation__form-input" id="team_name" type="text" name="name" placeholder="Enter Location">
+            <input class="navigation__form-submit" type="submit" value="Search">
+        </form>
+        <div class="navigation__logo">
+            <img class="navigation__logo__img" src="img/logo/logo__mostlyclear.png" alt="">
+        </div>
+    </div>
+</nav>
+<div class="location">
+    <div class="location__box">
+        <div class="location__box__my">
+            <h1>My Locations</h1>
+            <ul class="location__item-box">
+                <li class="location__item-box-location"><a href="" class="">Skopje</a></li>
+                <li class="location__item-box-location"><a href="" class="">Resen</a></li>
+                <li class="location__item-box-location"><a href="" class="">Istanbul</a></li>
+            </ul>
+        </div>
+        <div class="location__box__world">
+            <h1>World Famous Locations</h1>
+            <ul class="location__item-box">
+                <li class="location__item-box-location"><a href="" class="">New York</a></li>
+                <li class="location__item-box-location"><a href="" class="">Hong Kong</a></li>
+                <li class="location__item-box-location"><a href="" class="">Wien</a></li>
+                <li class="location__item-box-location"><a href="" class="">Moskow</a></li>
+                <li class="location__item-box-location"><a href="" class="">Berlin</a></li>
+                <li class="location__item-box-location"><a href="" class="">Tokio</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="content__location-box">
+        <h1 class="content__location-box-header">Skopje</h1>
+        <h3 class="content__location-box-country">Macedonia</h3>
+        <p class="content__location-box-time"> <span class="content__location-box-time-date">10/10</span>, <span class="content__location-box-time-day">4:09 PM</span></p>
+    </div>
+    <div class="content__weather-box">
+        <div class="content__weather-box-weather">
+            <div class="content__weather-box-weather-icon">
+                <img src="img/mostly_cloudy_day.png" alt="">
+            </div>
+            <div class="content__weather-box-weather-status">
+                <p>Mostly Cloudy</p>
+            </div>
+        </div>
+        <div class="content__weather-box-temperature">
+            <div class="content__weather-box-temperature-high">
+                <h4><span>&uarr;</span><span>74</span></h4>
+            </div>
+            <div class="content__weather-box-temperature-low">
+                <h4><span>&darr;</span><span>54</span></h4>
+            </div>
+        </div>
+        <div class="content__weather-box-current">
+            <div class="content__weather-box-current-number">
+                <h1>72 <sup>o</sup></h1>
+            </div>
+            <div class="content__weather-box-current-measure">
+                <h1>F</h1>
+                <h1>C</h1>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="forecast">
+    <div class="forecast-box-left">
+        <div class="forecast-box-temperature">
+
+        </div>
+        <div class="forecast-box-rain">
+
+        </div>
+        <div class="forecast-box-wind">
+
+        </div>
+    </div>
+    <div class="forecast-box-right">
+        <div class="forecast-box-details">
+
+        </div>
+        <div class="forecast-box-sun&moon">
+
+        </div>
+        <div class="forecast-box-map">
+
+        </div>
+    </div>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
