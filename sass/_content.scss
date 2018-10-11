@@ -11,7 +11,7 @@
     padding: 2rem 2rem 6rem 2rem;
     &-header{
       font-family: $font-second;
-      font-size: 3rem;
+      font-size: 5rem;
       font-weight: 700;
       color: #fff;
       text-shadow: 3px 3px 3px #000;
@@ -19,7 +19,7 @@
     }
     &-country{
       font-family: $font-second;
-      font-size: 1.4rem;
+      font-size: 2rem;
       text-transform: uppercase;
       font-weight: 700;
       color: #fff;
@@ -29,7 +29,7 @@
     &-time{
 
         font-family: $font-second;
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-weight: 300;
         color: #fff;
         text-shadow: 3px 3px 3px #000;
@@ -57,7 +57,7 @@
       &-status{
         & p{
           font-family: $font-second;
-          font-size: 1.4rem;
+          font-size: 1.6rem;
 
           font-weight: 400;
           color: #fff;
@@ -94,13 +94,14 @@
       align-items: center;
       &-number{
         font-family: $font-second;
-        font-size: 3rem;
+        font-size: 5rem;
         font-weight: 300;
         color: #fff;
         padding-right: .5rem;
+        text-shadow: 3px 3px 3px #595959;
       }
       &-measure{
-        height: 8rem;
+        height: 10rem;
         color:#fff;
         display: flex;
         font-weight: 300;
@@ -111,11 +112,12 @@
           height: 4rem;
           width: 4rem;
           border: 1px solid $color-lightgrey;
-
+          text-shadow: 3px 3px 3px #5b5b5b;
           border-radius: 5px;
          display: flex;
           align-items: center;
           justify-content: center;
+          cursor: pointer;
         }
       }
     }

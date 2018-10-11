@@ -1,49 +1,398 @@
-.forecast{
-  width: 80rem;
+.forecast {
+  width: 80vw;
   z-index: 5;
   position: absolute;
   top: 50rem;
   left: 17rem;
   display: flex;
   margin: .5rem;
-  &-box-left{
-    flex: 1 1 40%;
+  &-box-left {
+    flex: 1 1 50%;
     margin: .5rem;
+    overflow: hidden;
 
-    display: flex;
-    flex-direction: column;
-    & > *{
+    & > * {
       margin: .5rem;
 
     }
 
   }
-  &-box-right{
-    flex: 1 1 40%;
+  &-box-right {
+    overflow: hidden;
+    flex: 1 1 50%;
+    //width: 1500px;
     margin: .5rem;
 
-    display: flex;
-    flex-direction: column;
-    & > *{
+    display: block;
+
+    & > * {
       margin: .5rem;
 
     }
 
   }
-  &-box{
-    &-temperature{
+  &-box {
+    &-temperature {
       width: 100%;
-      flex : 1;
-      background-color: rgba(0,0,0, 0.3);
-      height: 40rem;
-      //width: 30rem;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 1rem;
+      &-header {
+        font-family: $font-second;
+        color: #fff;
+        font-size: 2rem;
+        border-bottom: 1px solid #fff;
+      }
+      &-hourly {
+
+        width: 100%;
+
+        & h1 {
+          display: inline-block;
+          padding: .5rem 0;
+          font-family: $font-second;
+          color: #fff;
+          font-size: 1.6rem;
+          border-bottom: 1px solid #fff;
+        }
+        &-item-box {
+
+          display: flex;
+          //flex: 0 0 100%;
+          padding: 1rem 0;
+          overflow-x: scroll;
+        }
+        &-item {
+          flex: 0 0 10%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding-right: 1rem;
+          & > p {
+            color: #fff;
+            font-family: inherit;
+            font-size: 1rem;
+
+          }
+        }
+      }
+      &-day {
+        width: 100%;
+        margin-top: 2rem;
+        &-box {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: .5rem 1rem;
+          border-bottom: 1px solid lightgray;
+          & > h1 {
+            font-family: $font-second;
+            color: #fff;
+            font-size: 1.6rem;
+          }
+
+        }
+      }
     }
-    &-details{
+    &-details {
       width: 100%;
-      flex:1;
-      //width: 30rem;
-      background-color: rgba(0,0,0, 0.3);
-      height: 40rem;
+      flex: 1;
+
+      background-color: rgba(0, 0, 0, 0.3);
+
+    }
+    &-rain {
+      padding: 1rem;
+      width: 100%;
+      background-color: rgba(0, 0, 0, .3);
+      &-content {
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &-item {
+          & p {
+            font-family: $font-second;
+            color: #fff;
+            font-size: 1.4rem;
+          }
+          & h3 {
+            font-family: $font-second;
+            color: #fff;
+            font-size: 1.7rem;
+          }
+          & > * {
+            text-align: center;
+            padding: .3rem;
+          }
+        }
+      }
+    }
+    &-wind {
+      padding: 1rem;
+      width: 100%;
+      background-color: rgba(0, 0, 0, .3);
+
+      &-content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 15rem;
+        padding: 0 2rem;
+        &-text {
+          padding: 2rem;
+          border-bottom: 1px solid $color-lightgrey;
+          & h1 {
+            color: #fff;
+            font-family: $font-second;
+            font-size: 1.8rem;
+          }
+          & p {
+            color: #fff;
+            font-family: $font-second;
+            font-size: 1.8rem;
+          }
+        }
+        &-bottom {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          padding: 1rem;
+          & h1 {
+            color: #fff;
+            font-family: $font-second;
+            font-size: 1.5rem;
+          }
+          & p {
+            color: #fff;
+            font-family: $font-second;
+            font-size: 1.2rem;
+          }
+
+        }
+      }
+    }
+    &-details {
+      padding: 1rem;
+      width: 100%;
+      background-color: rgba(0, 0, 0, .3);
+      &-content {
+        margin: 2rem 0;
+        display: flex;
+        &-img {
+          flex: 0 0 40%;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &-box {
+            width: 6rem;
+            //height: 5rem;
+            & img {
+              width: 100%;
+              height: auto;
+              object-fit: contain;
+            }
+          }
+
+        }
+        &-text {
+
+          flex: 0 0 60%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          //align-items: center;
+          & > h1 {
+            //width: 100%;
+            display: flex;
+            color: #fff;
+            font-family: $font-second;
+            font-size: 1.6rem;
+            font-weight: 400;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid lightgray;
+            & > span {
+              font-size: 1.4rem;
+              margin-left: auto;
+            }
+          }
+        }
+
+      }
+      &-momentarly {
+        color: #fff;
+        font-family: $font-second;
+        font-size: 1.6rem;
+        font-weight: 400;
+        padding: 1rem 0;
+        border-bottom: 1px solid lightgray;
+        & > span {
+          padding-left: 1rem;
+        }
+      }
+      &-today {
+        color: #fff;
+        font-family: $font-second;
+        font-size: 1.6rem;
+        font-weight: 400;
+        padding: 1rem 0;
+        border-bottom: 1px solid lightgray;
+        & > span {
+          padding-left: 1rem;
+        }
+      }
+      &-tonight {
+        color: #fff;
+        font-family: $font-second;
+        font-size: 1.6rem;
+        font-weight: 400;
+        padding: 1rem 0;
+        border-bottom: 1px solid lightgray;
+        & > span {
+          padding-left: 1rem;
+        }
+      }
+    }
+    &-sunmoon {
+
+      width: 100%;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.3);
+      & > h1{
+        margin-bottom: 1rem;
+      }
+      &-content{
+        z-index: 3;
+        position: relative;
+        width: 40rem;
+        height: 10rem;
+        border-bottom: 1px solid lightgray;
+        overflow: hidden;
+        padding: 3rem 2rem 2rem 2rem;
+        &-box{
+          position: relative;
+          border: 1px dashed lightgray;
+          border-radius: 50%;
+          width: 25rem;
+          height: 25rem;
+          &-sun{
+            position: absolute;
+            top:7rem;
+            left:-1.5rem;
+            height: 3rem;
+            width: 3rem;
+            &.active{
+              transform: rotate(215deg);
+              transform-origin: 14rem -2.8rem;
+              transition: all 8s linear;
+            }
+
+            & >img{
+              width: 100%;
+              height: auto;
+              object-fit: cover;
+            }
+          }
+          &-background{
+            width: 5rem;
+            overflow: hidden;
+            position: relative;
+            & >img{
+              width: 25rem;
+              height: auto;
+              //object-fit: cover;
+
+            }
+          }
+
+        }
+        &:before{
+          position: absolute;
+          display: block;
+          content: "";
+          height: .7rem;
+          width: .7rem;
+          border-radius: 50%;
+          background-color: #fdff27;
+          top: 9.5rem;
+          left: 3.1rem;
+          z-index: 15;
+        }
+        &:after{
+          position: absolute;
+          display: block;
+          content: "";
+          height: .7rem;
+          width: .7rem;
+          border-radius: 50%;
+          background-color: #fdff27;
+          top: 9.5rem;
+          left: 25.2rem;
+          z-index: 15;
+        }
+      }
+      &-time{
+        padding: 1rem 2rem 2rem 1rem;
+        width: 30rem;
+        display: flex;
+        justify-content: space-between;
+        &-morning{
+          font-family: $font-second;
+          font-size: 1.4rem;
+          color: #fff;
+        }
+        &-night{
+          font-family: $font-second;
+          font-size: 1.4rem;
+          color: #fff;
+        }
+      }
+      &-moon{
+        &-box{
+          width: 12rem;
+          height: 12rem;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 2rem;
+          & > img{
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+          }
+        }
+        & > p{
+          font-family: $font-second;
+          font-size: 1.4rem;
+          color: #fff;
+          text-align: center;
+        }
+      }
+    }
+    &-map {
+      position: relative;
+      z-index: 20;
+      width: 100%;
+      //height: 20vh;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.3);
     }
   }
+
+}
+#latitude{
+  display: none;
+}
+#longitude{
+  display: none;
+}
+#map{
+  padding: 1rem;
+
+}
+
+#mapTwo{
+  padding: 1rem;
+
 }
