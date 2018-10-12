@@ -28,4 +28,23 @@ $(document).ready(function(){
         $(".uvIndex-span").text("(Very High)")
     }
     //console.log(geo)
+    $(".rain-2").text("Afternoon");
+    console.log($(".rain-1").text())
+    if($(".rain-1").text()=== "Morning"){
+        $(".rain-2").text("Afternoon");
+        $(".rain-3").text("Evening");
+        $(".rain-4").text("Night");
+    }else if($(".rain-1").text()==="Afternoon"){
+        $(".rain-2").text("Evening");
+        $(".rain-3").text("Night");
+        $(".rain-4").text("Morning");
+    }else if($(".rain-1").text()==="Evening"){
+        $(".rain-2").text("Night");
+        $(".rain-3").text("Morning");
+        $(".rain-4").text("Afternoon");
+    }else if($(".rain-1").text()==="Night"){
+        $(".rain-2").text("Morning");
+        $(".rain-3").text("Afternoon");
+        $(".rain-4").text("Evening");
+    }
 })

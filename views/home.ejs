@@ -292,10 +292,10 @@
             <h1 class="forecast-box-temperature-header">Precipitation</h1>
             <div class="forecast-box-rain-content">
                 <div class="forecast-box-rain-content-item">
-                    <h3> <% if( new Date().getHours() > 24){%> Night
-                        <%  break;}else if(new Date().getHours() > 18){%>Evening
-                        <% break;}else if(new Date().getHours() > 12){%>Afternoon
-                        <% break;}else if(new Date().getHours() >6){%>Morning <% break;}%>
+                    <h3 class="rain-1"> <% if( new Date().getHours() > 24){%> Night
+                        <%}else if(new Date().getHours() > 18){%>Evening
+                        <%}else if(new Date().getHours() > 12){%>Afternoon
+                        <%}else if(new Date().getHours() >6){%>Morning <%}%>
                     </h3>
 
 
@@ -305,30 +305,21 @@
                     <p><%= (wed.hourly.data[0].precipProbability * 100).toFixed(1) %>%</p>
                 </div>
                 <div class="forecast-box-rain-content-item">
-                    <h3>
-
-                    </h3>
+                    <h3 class="rain-2"></h3>
                     <div class="img-box flex-center">
                         <img src="img/rain_icon.png" alt="">
                     </div>
                     <p><%= (wed.hourly.data[6].precipProbability * 100).toFixed(1) %>%</p>
                 </div>
                 <div class="forecast-box-rain-content-item">
-                    <h3>
-
-                    </h3>
+                    <h3 class="rain-3"></h3>
                     <div class="img-box flex-center">
                         <img src="img/rain_icon.png" alt="">
                     </div>
                     <p><%= (wed.hourly.data[12].precipProbability * 100).toFixed(1) %>%</p>
                 </div>
                 <div class="forecast-box-rain-content-item">
-                    <h3>
-                        <% if( new Date().getHours()+18 > 24){%> Night
-                        <%}else if(new Date().getHours()+18 > 18){%>Evening
-                        <%}else if(new Date().getHours()+18 < 18){%>Afternoon
-                        <%}else if(new Date().getHours()+18 <24){%>Evening <%}%>
-                    </h3>
+                    <h3 class="rain-4"></h3>
                     <div class="img-box flex-center">
                         <img src="img/rain_icon.png" alt="">
                     </div>
