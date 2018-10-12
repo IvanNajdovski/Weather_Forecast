@@ -60,8 +60,9 @@
 </div>
 <div class="content">
     <div class="content__location-box">
-        <h1 class="content__location-box-header"><%= geo.results[0].locations[0].adminArea3  %></h1>
+        <h1 class="content__location-box-header"><%= geo.results[0].locations[0].adminArea5 %></h1>
         <h3 class="content__location-box-country"><%= geo.results[0].locations[0].adminArea1  %></h3>
+        <h3 class="content__location-box-country">Timezone - <%= wed.timezone  %></h3>
         <p class="content__location-box-time"><span class="content__location-box-time-date">10/10</span>, <span
                     class="content__location-box-time-day">4:09 PM</span></p>
     </div>
@@ -71,20 +72,20 @@
                 <img src="img/mostly_cloudy_day.png" alt="">
             </div>
             <div class="content__weather-box-weather-status">
-                <p>Mostly Cloudy</p>
+                <p><%= wed.hourly.summary %></p>
             </div>
         </div>
         <div class="content__weather-box-temperature">
             <div class="content__weather-box-temperature-high">
-                <h4><span>&uarr;</span><span> 74 <sup>o</sup></span></h4>
+                <h4><span>&uarr;</span><span> <%= wed.daily.data[0].temperatureHigh.toFixed(1) %> <sup>o</sup></span></h4>
             </div>
             <div class="content__weather-box-temperature-low">
-                <h4><span>&darr;</span><span> 54 <sup>o</sup></span></h4>
+                <h4><span>&darr;</span><span><%= wed.daily.data[0].temperatureLow.toFixed(1) %> <sup>o</sup></span></h4>
             </div>
         </div>
         <div class="content__weather-box-current">
             <div class="content__weather-box-current-number">
-                <h1><%= wed.currently.temperature%> <sup>o</sup></h1>
+                <h1><%= wed.currently.temperature.toFixed(1) %> <sup>o</sup></h1>
             </div>
             <div class="content__weather-box-current-measure">
                 <h1>F</h1>
@@ -291,32 +292,47 @@
             <h1 class="forecast-box-temperature-header">Precipitation</h1>
             <div class="forecast-box-rain-content">
                 <div class="forecast-box-rain-content-item">
-                    <h3>Evening</h3>
+                    <h3> <% if( new Date().getHours() > 24){%> Night
+                        <%  break;}else if(new Date().getHours() > 18){%>Evening
+                        <% break;}else if(new Date().getHours() > 12){%>Afternoon
+                        <% break;}else if(new Date().getHours() >6){%>Morning <% break;}%>
+                    </h3>
+
+
                     <div class="img-box flex-center">
                         <img src="img/rain_icon.png" alt="">
                     </div>
-                    <p>0%</p>
+                    <p><%= (wed.hourly.data[0].precipProbability * 100).toFixed(1) %>%</p>
                 </div>
                 <div class="forecast-box-rain-content-item">
-                    <h3>Evening</h3>
+                    <h3>
+
+                    </h3>
                     <div class="img-box flex-center">
                         <img src="img/rain_icon.png" alt="">
                     </div>
-                    <p>0%</p>
+                    <p><%= (wed.hourly.data[6].precipProbability * 100).toFixed(1) %>%</p>
                 </div>
                 <div class="forecast-box-rain-content-item">
-                    <h3>Evening</h3>
+                    <h3>
+
+                    </h3>
                     <div class="img-box flex-center">
                         <img src="img/rain_icon.png" alt="">
                     </div>
-                    <p>0%</p>
+                    <p><%= (wed.hourly.data[12].precipProbability * 100).toFixed(1) %>%</p>
                 </div>
                 <div class="forecast-box-rain-content-item">
-                    <h3>Evening</h3>
+                    <h3>
+                        <% if( new Date().getHours()+18 > 24){%> Night
+                        <%}else if(new Date().getHours()+18 > 18){%>Evening
+                        <%}else if(new Date().getHours()+18 < 18){%>Afternoon
+                        <%}else if(new Date().getHours()+18 <24){%>Evening <%}%>
+                    </h3>
                     <div class="img-box flex-center">
                         <img src="img/rain_icon.png" alt="">
                     </div>
-                    <p>0%</p>
+                    <p><%= (wed.hourly.data[18].precipProbability * 100).toFixed(1) %>%</p>
                 </div>
             </div>
         </div>
@@ -327,15 +343,15 @@
                     <img src="img/pole.png" alt="">
                 </div>
                 <div class="wind-wing">
-                    <img src="img/perki2.png" alt="">
+                    <img class="wind-wing-rotate" src="img/perki2.png" alt="">
                 </div>
                 <div class="forecast-box-wind-content-text">
                     <h1>Wind</h1>
-                    <p>2 mph</p>
+                    <p><%= wed.currently.windSpeed %> mph</p>
                 </div>
                 <div class="forecast-box-wind-content-bottom">
                     <h1>Barometar</h1>
-                    <p>29.8 inches</p>
+                    <p><%= wed.daily.data[0].pressure %> millibars</p>
                 </div>
             </div>
 
@@ -352,20 +368,20 @@
                     </div>
                 </div>
                 <div class="forecast-box-details-content-text">
-                    <h1>Feels like <span>46 <sup>o</sup></span></h1>
-                    <h1>Humidity <span>77 %</span></h1>
-                    <h1>Visibility <span>10.00 km</span></h1>
-                    <h1>UV Index <span>1 (low) </span></h1>
+                    <h1>Feels like <span><%= (wed.currently.apparentTemperature).toFixed(1) %> <sup>o</sup></span></h1>
+                    <h1>Humidity <span><%= wed.currently.humidity * 100 %> %</span></h1>
+                    <h1>Visibility <span><%= wed.currently.visibility %> km</span></h1>
+                    <h1>UV Index <span class="uvIndex"><%= wed.daily.data[0].uvIndex %> <span class="uvIndex-span"></span></span></h1>
                 </div>
             </div>
             <div class="forecast-box-details-momentarly">
-                <p>At the moment: <span>Light rain stopping in 13 min., starting again 30 min. later.</span></p>
+                <p>At the moment: <span><%= wed.hourly.summary %></span></p>
             </div>
             <div class="forecast-box-details-today">
-                <p>Today : <span>Rain starting later this afternoon, continuing until this evening.</span></p>
+                <p>Today : <span><%= wed.daily.data[0].summary %></span></p>
             </div>
             <div class="forecast-box-details-tonight">
-                <p>Tonight : <span>Rain starting later this afternoon, continuing until this evening.</span></p>
+                <p>Week : <span><%= wed.daily.summary %></span></p>
             </div>
 
         </div>
@@ -403,10 +419,10 @@
 
         </div>
     </div>
-
+    results[0].locations[0].latLng.lat
 </div>
-<h1 id="latitude">41.9652382</h1>
-<h2 id="longitude">21.4454749</h2>
+<h1 id="latitude"><%= geo.results[0].locations[0].latLng.lat %></h1>
+<h2 id="longitude"><%= geo.results[0].locations[0].latLng.lng %></h2>
 
 <script src="js/index2.js" ></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

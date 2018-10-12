@@ -543,7 +543,6 @@ body {
     .content__location-box-country {
       font-family: "Bai Jamjuree";
       font-size: 2rem;
-      text-transform: uppercase;
       font-weight: 700;
       color: #fff;
       text-shadow: 3px 3px 3px #000;

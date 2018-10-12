@@ -13,4 +13,19 @@ $(document).ready(function(){
     $(".forecast-box-sunmoon").on("click", function(){
         $(".forecast-box-sunmoon-content-box-sun").addClass("active");
     })
+    // --------------------WIND TURBINE ROTATION--------------------------
+
+    var speed = $(".forecast-box-wind-content-text").children("p").text().split(" ")[0] ;
+    $(".wind-wing-rotate").css("animation", `wind ${50/speed}s infinite linear`)
+    console.log(speed)
+    if($(".uvIndex").text() < 3){
+        $(".uvIndex-span").text("(Low)")
+    }else if($(".uvIndex").text() > 3){
+        $(".uvIndex-span").text("(Moderate)")
+    }else if($(".uvIndex").text() > 6){
+        $(".uvIndex-span").text("(High)")
+    }else if($(".uvIndex").text() > 8){
+        $(".uvIndex-span").text("(Very High)")
+    }
+    //console.log(geo)
 })

@@ -111,7 +111,7 @@ app.post("/", function(req,response){
     geoLoc = response.data;
     lat = response.data.results[0].locations[0].latLng.lat;
     lng = response.data.results[0].locations[0].latLng.lng;
-    var weatherUrl = `https://api.darksky.net/forecast/bc5ef75e2e5f0b731e4574d01fe00ae2/${lat},${lng}`;
+    var weatherUrl = `https://api.darksky.net/forecast/bc5ef75e2e5f0b731e4574d01fe00ae2/${lat},${lng}?units=si`;
     return axios.get(weatherUrl);
 }).then((response) => {
         wedRes = response.data;
@@ -122,7 +122,7 @@ app.post("/", function(req,response){
 }).then((res)=>{
         var number = Math.round(Math.random()*10);
     var url = `https://farm${res.data.photos.photo[number].farm}.staticflickr.com/${res.data.photos.photo[number].server}/${res.data.photos.photo[number].id}_${res.data.photos.photo[number].secret}_b.jpg`;
-    response.render("home", {wed: wedRes, name: location , photo: url})
+    response.render("home", {wed: wedRes, geo: geoLoc , photo: url})
         console.log(JSON.stringify(response.data,undefined,2))
     console.log(JSON.stringify(wedRes, undefined,2));
     console.log(JSON.stringify(geoLoc,undefined,2));
