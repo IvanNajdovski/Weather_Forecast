@@ -1,3 +1,16 @@
+@keyframes logo {
+  0%{
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(-250px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+
+}
+
 .navigation{
   position: fixed;
   top:0;
@@ -18,10 +31,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    visibility: hidden;
+    opacity: 0;
+    &.active{
+
+      opacity: 100;
+      visibility: visible;
+      transition: all 3s;
+
+      &.animate{
+        animation: logo 15s infinite linear;
+      }
+    }
     &__img{
       width: 100%;
       height: auto;
       object-fit: cover;
+
+
     }
   }
   &__form{

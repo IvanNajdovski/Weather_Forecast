@@ -69,7 +69,24 @@
             <input class="navigation__form-submit" type="submit" value="Search">
         </form>
         <div class="navigation__logo">
+            <% if ( wed.currently.icon === "rain"){%>
+            <img class="navigation__logo__img" src="img/logo/logo__rain.png" alt="">
+            <%}else if( wed.currently.icon === "wind"){%>
+            <img class="navigation__logo__img" src="img/logo/logo__clear.png" alt="">
+            <%}else if( wed.currently.icon === "clear-day"){%>
+            <img class="navigation__logo__img" src="img/logo/logo__clear.png" alt="">
+            <%}else if( wed.currently.icon === "clear-night"){%>
+            <img class="navigation__logo__img" src="img/logo/logo__clear-night.png" alt="">
+            <%}else if( wed.currently.icon === "partly-cloudy-night"){%>
+            <img class="navigation__logo__img" src="img/logo/mostly-cloudy-night.png" alt="">
+            <%}else if( wed.currently.icon === "partly-cloudy-day"){%>
             <img class="navigation__logo__img" src="img/logo/logo__mostlyclear.png" alt="">
+            <%}else if( wed.currently.icon === "cloudy"){%>
+            <img class="navigation__logo__img" src="img/logo/logo__cloud.png" alt="">
+            <%}else if( wed.currently.icon === "snow"){%>
+            <img class="navigation__logo__img" src="img/logo/logo__snow__rain.png" alt="">
+            <%}%>
+
         </div>
     </div>
 </nav>

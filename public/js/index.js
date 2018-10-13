@@ -46,4 +46,12 @@ $(document).ready(function(){
         }
 
 
+        setTimeout(function(){
+            $(".navigation__logo").addClass("animate");
+        },2000);
+    setTimeout(function(){
+        $(".navigation__logo").addClass("active");
+    },3000);
+
+
 })
