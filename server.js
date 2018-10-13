@@ -1,61 +1,26 @@
 const express = require("express");
 const axios = require("axios");
 const app = express();
-const timezone = require("moment-timezone")
+const timezone = require("moment-timezone");
 
 
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 3000;
 
-// const geocode = require('./geocode/geocode');
-// const weather = require('./weather/weather');
-// const photo = require('./flickr/flickr');
+/
 
 app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
 
-// geocode.geocodeAddress( (errorMessage, results) => {
-//     if(errorMessage) {
-//         console.log(errorMessage);
-//     } else {
-//         var location = results.address;
-// var latitude = results.latitude;
-// var longitude = results.longitude;
-// weather.getWeather(results.latitude, results.longitude, (errorMessage, weatherResults) => {
-//     if(errorMessage) {
-//         console.log(errorMessage);
-//     } else {
-//         //console.log(location,latitude,longitude);
-//         var temperature = weatherResults.temperature
-//         //console.log(`It's currently ${weatherResults.temperature}. It feels like ${weatherResults.apparentTemperature}.`);
-//         photo.getPhoto(latitude, longitude, (errorMessage, photoResults) => {
-//         if(errorMessage) {
-//             console.log(errorMessage);
-//         }else {
-//             //response.render("home", {temp: temperature, name: location})
-//         console.log(location, latitude, longitude);
-// console.log("temperature is ", temperature);
-// console.log("Photo data")
-//
-// console.log(JSON.stringify(photoResults.photo, undefined, 4))
-// console.log(photoResults.url)
-// }
-// })
-// }
-// })
-// ;
-// }
-//
-//
-// })
+
 
 app.get("/", function(req,response){
     var sunrise;
     var offsetH;
     var timeFormat;
     var time;
-    var address = "Skopje"
+    var address = "Skopje";
     var wedRes;
     var geoLoc;
     var lat;
@@ -76,13 +41,9 @@ app.get("/", function(req,response){
     return axios.get(weatherUrl);
 }).then((response) => {
         time = timezone(response.data.currently.time * 1000).tz(response.data.timezone).format("Z z");
-    offsetH = (Number(time.split(":")[0] ) -2)
+        offsetH = (Number(time.split(":")[0] ) -2);
         offset = (Number(time.split(":")[0] ) -2)*1000*60*60;
-    sunrise = timezone(response.data.daily.data[0].sunsetTime* 1000).tz(response.data.timezone).format();
-        console.log(sunrise);
-
-    console.log(offset)
-
+        sunrise = timezone(response.data.daily.data[0].sunsetTime* 1000).tz(response.data.timezone).format();
         wedRes = response.data;
     var temperature = response.data.currently.temperature;
     var apparentTemperature = response.data.currently.apparentTemperature;
@@ -91,7 +52,7 @@ app.get("/", function(req,response){
 }).then((res)=>{
         var number = Math.round(Math.random()*10);
     var url = `https://farm${res.data.photos.photo[number].farm}.staticflickr.com/${res.data.photos.photo[number].server}/${res.data.photos.photo[number].id}_${res.data.photos.photo[number].secret}.jpg`;
-        response.render("home", {offset: offset, wed: wedRes, geo: geoLoc , photo: url})
+        response.render("home", {offsetH: offsetH,offset: offset, wed: wedRes, geo: geoLoc , photo: url});
 
 
 }).catch((e) => {
@@ -131,11 +92,7 @@ app.post("/", function(req,response){
         time = timezone(response.data.currently.time * 1000).tz(response.data.timezone).format("Z z");
         sunrise = timezone(response.data.daily.data[0].sunsetTime * 1000).tz(response.data.timezone).format();
         offsetH = (Number(time.split(":")[0] ) -2)
-    offset = (Number(time.split(":")[0] ) -2)*1000*60*60;
-    console.log(sunrise)
-
-    console.log(offset)
-
+        offset = (Number(time.split(":")[0] ) -2)*1000*60*60;
         wedRes = response.data;
     var temperature = response.data.currently.temperature;
     var apparentTemperature = response.data.currently.apparentTemperature;
@@ -155,14 +112,6 @@ app.post("/", function(req,response){
     }
 });
 })
-
-//     console.log(JSON.stringify(response.data,undefined,2))
-// console.log(JSON.stringify(wedRes, undefined,2));
-// console.log(JSON.stringify(geoLoc,undefined,2));
-
-// console.log("offset is", Number(offset))
-// console.log(time)
-
 
 
            app.listen(port, ()=>{
