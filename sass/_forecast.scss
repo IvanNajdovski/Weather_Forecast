@@ -283,25 +283,30 @@
           width: 25rem;
           height: 25rem;
           &-sun{
+            transform: translate(-5rem, -5rem) rotate(20deg);
             position: absolute;
-            top:7rem;
-            left:-1.5rem;
-            height: 3rem;
-            width: 3rem;
+            top:0;
+            left:0;
+            height: 35rem;
+            width: 35rem;
+            display: flex;
+            align-items: center;
             &.active{
-              transform: rotate(215deg);
-              transform-origin: 14rem -2.8rem;
+              transform: translate(-5rem, -5rem) rotate(115deg);
+              transform-origin: center;
+
               transition: all 8s linear;
             }
 
             & >img{
-              width: 100%;
-              height: auto;
+              margin-left: 3rem;
+              width: 3rem;
+              height: 3rem;
               object-fit: cover;
             }
           }
           &-background{
-            width: 5rem;
+            width: 0;
             overflow: hidden;
             position: relative;
             & >img{

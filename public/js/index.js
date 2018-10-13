@@ -52,6 +52,17 @@ $(document).ready(function(){
     setTimeout(function(){
         $(".navigation__logo").addClass("active");
     },3000);
-
+        setTimeout(function(){
+            var currentHour = $(".currentHour").text()
+            var sunrise = $(".sunrise").text().split(":")[0].trim()
+            var sunset = $(".sunset").text().split(":")[0].trim()
+            var width =(currentHour-sunrise) * 100 / (sunset-sunrise);
+            var rotate = ((135/100)*width)+20
+            console.log(currentHour , sunrise ,sunset , width)
+            $(".forecast-box-sunmoon-content-box-background").css("width",`${width}%`);
+            $(".forecast-box-sunmoon-content-box-background").css("transition","width 2s");
+            $(".forecast-box-sunmoon-content-box-sun").css("transform", `translate(-5rem, -5rem) rotate(${rotate}deg`);
+            $(".forecast-box-sunmoon-content-box-sun").css("transition","all 2s");
+        },2000)
 
 })

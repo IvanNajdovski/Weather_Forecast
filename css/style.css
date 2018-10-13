@@ -142,7 +142,8 @@ body {
   left: 0;
   z-index: 2;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3); }
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 100; }
   .navigation__box {
     padding: .5rem 6rem;
     display: flex;
@@ -437,21 +438,25 @@ body {
         width: 25rem;
         height: 25rem; }
         .forecast-box-sunmoon-content-box-sun {
+          transform: translate(-5rem, -5rem) rotate(20deg);
           position: absolute;
-          top: 7rem;
-          left: -1.5rem;
-          height: 3rem;
-          width: 3rem; }
+          top: 0;
+          left: 0;
+          height: 35rem;
+          width: 35rem;
+          display: flex;
+          align-items: center; }
           .forecast-box-sunmoon-content-box-sun.active {
-            transform: rotate(215deg);
-            transform-origin: 14rem -2.8rem;
+            transform: translate(-5rem, -5rem) rotate(115deg);
+            transform-origin: center;
             transition: all 8s linear; }
           .forecast-box-sunmoon-content-box-sun > img {
-            width: 100%;
-            height: auto;
+            margin-left: 3rem;
+            width: 3rem;
+            height: 3rem;
             object-fit: cover; }
         .forecast-box-sunmoon-content-box-background {
-          width: 5rem;
+          width: 0;
           overflow: hidden;
           position: relative; }
           .forecast-box-sunmoon-content-box-background > img {
@@ -878,21 +883,25 @@ body {
         width: 25rem;
         height: 25rem; }
         .forecast-box-sunmoon-content-box-sun {
+          transform: translate(-5rem, -5rem) rotate(20deg);
           position: absolute;
-          top: 7rem;
-          left: -1.5rem;
-          height: 3rem;
-          width: 3rem; }
+          top: 0;
+          left: 0;
+          height: 35rem;
+          width: 35rem;
+          display: flex;
+          align-items: center; }
           .forecast-box-sunmoon-content-box-sun.active {
-            transform: rotate(215deg);
-            transform-origin: 14rem -2.8rem;
+            transform: translate(-5rem, -5rem) rotate(115deg);
+            transform-origin: center;
             transition: all 8s linear; }
           .forecast-box-sunmoon-content-box-sun > img {
-            width: 100%;
-            height: auto;
+            margin-left: 3rem;
+            width: 3rem;
+            height: 3rem;
             object-fit: cover; }
         .forecast-box-sunmoon-content-box-background {
-          width: 5rem;
+          width: 0;
           overflow: hidden;
           position: relative; }
           .forecast-box-sunmoon-content-box-background > img {
