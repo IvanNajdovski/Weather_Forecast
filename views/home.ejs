@@ -138,17 +138,17 @@
 <div class="forecast">
     <div class="forecast-box-left">
         <div class="forecast-box-temperature">
-            <% if(new Date(wed.daily.data[1].sunriseTime * 1000).getHours() > Math.abs(offset)) {%>
-            <h1 style="color:#fff;">Sunrise <%= new Date(wed.daily.data[1].sunriseTime * 1000).getHours()   %> </h1>
-            <%}else{%>
-            <h1 style="color:#fff;">Sunrise <%= new Date(wed.daily.data[1].sunriseTime * 1000).getHours()   %> </h1>
-            <%}%>
-            <% if(new Date(wed.daily.data[1].sunsetTime * 1000).getHours() > Math.abs(offset)) {%>
-            <h1 style="color:#fff;">Sunset <%=  new Date(wed.daily.data[1].sunsetTime * 1000).getHours() - new Date().getHours()  %> </h1>
-            <%}else{%>
-            <h1 style="color:#fff;">Sunset <%=  new Date(wed.daily.data[1].sunsetTime * 1000).getHours()   - new Date().getHours()  %> </h1>
-            <%}%>
-            <h1 style="color:#fff;"><%= new Date(wed.daily.data[1].sunriseTime * 1000)%></h1>
+            <!--<% if(new Date(wed.daily.data[1].sunriseTime * 1000).getHours() > Math.abs(offset)) {%>-->
+            <!--<h1 style="color:#fff;">Sunrise <%= new Date(wed.daily.data[1].sunriseTime * 1000).getHours()   %> </h1>-->
+            <!--<%}else{%>-->
+            <!--<h1 style="color:#fff;">Sunrise <%= new Date(wed.daily.data[1].sunriseTime * 1000).getHours()   %> </h1>-->
+            <!--<%}%>-->
+            <!--<% if(new Date(wed.daily.data[1].sunsetTime * 1000).getHours() > Math.abs(offset)) {%>-->
+            <!--<h1 style="color:#fff;">Sunset <%=  new Date(wed.daily.data[1].sunsetTime * 1000).getHours() - new Date().getHours()  %> </h1>-->
+            <!--<%}else{%>-->
+            <!--<h1 style="color:#fff;">Sunset <%=  new Date(wed.daily.data[1].sunsetTime * 1000).getHours()   - new Date().getHours()  %> </h1>-->
+            <!--<%}%>-->
+            <h1 style="color:#fff;"><%= new Date((wed.daily.data[1].sunriseTime * 1000)-32400000)%></h1>
             <h1 style="color:#fff;"><%= new Date (wed.daily.data[1].sunsetTime * 1000)%></h1>
             <h1 style="color:#fff;"><%= new Date(wed.currently.time * 1000)%></h1>
 

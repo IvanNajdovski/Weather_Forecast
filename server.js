@@ -5,7 +5,7 @@ const timezone = require("moment-timezone")
 
 
 const bodyParser = require("body-parser");
-
+const port = process.env.PORT || 3000;
 
 // const geocode = require('./geocode/geocode');
 // const weather = require('./weather/weather');
@@ -163,7 +163,7 @@ app.post("/", function(req,response){
 
 
 
-           app.listen(3000, ()=>{
+           app.listen(port, ()=>{
                console.log("Portal open on port 3000")
            })
 
