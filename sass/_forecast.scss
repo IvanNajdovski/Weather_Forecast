@@ -85,6 +85,9 @@
           justify-content: space-between;
           padding: .5rem 1rem;
           border-bottom: 1px solid lightgray;
+          & > *{
+            flex: 0 0 25%;
+          }
           & > h1 {
             font-family: $font-second;
             color: #fff;
@@ -120,6 +123,8 @@
             font-family: $font-second;
             color: #fff;
             font-size: 1.7rem;
+            padding-bottom: .5rem;
+            border-bottom: 1px solid #fff;
           }
           & > * {
             text-align: center;

@@ -18,9 +18,31 @@
 </head>
 <body>
 <section class="background">
-    <div class="background__box sunny">
+    <% if ( new Date(wed.currently.time * 1000).getHours() + offset > new Date(wed.daily.data[0].sunriseTime * 1000).getHours() +offset && new Date(wed.currently.time * 1000).getHours() + offset <= new Date(wed.daily.data[0].sunsetTime * 1000).getHours() + offset ){%>
+    <div class="background__box rain__day"></div>
+        <% if ( wed.currently.icon === "rain"){%>
+    <div class="background__box rain__day"></div>
+        <%}else if( wed.currently.icon === "wind"){%>
+    <div class="background__box rain__day"></div>
+        <%}else if( wed.currently.icon === "clear-day"){%>
+    <div class="background__box rain__day"></div>
+        <%}else if( wed.currently.icon === "clear-night"){%>
+    <div class="background__box rain__day"></div>
+        <%}else if( wed.currently.icon === "partly-cloudy-night"){%>
+    <div class="background__box rain__day"></div>
+        <%}else if( wed.currently.icon === "partly-cloudy-day"){%>
+    <div class="background__box rain__day"></div>
+        <%}else if( wed.currently.icon === "cloudy"){%>
+    <div class="background__box rain__day"></div>
+        <%}else if( wed.currently.icon === "snow"){%>
+    <div class="background__box rain__day"></div>
+        <%}%>
 
-    </div>
+    <%}else{%>%>
+    <div class="background__box rain__night"></div>
+    <%}%>
+
+
 </section>
 <nav class="navigation">
     <div class="navigation__box">
@@ -69,7 +91,24 @@
     <div class="content__weather-box">
         <div class="content__weather-box-weather">
             <div class="content__weather-box-weather-icon">
+                <% if ( wed.currently.icon === "rain"){%>
+                <img src="img/scattered_showers_day_night.png" alt="">
+                <%}else if( wed.currently.icon === "wind"){%>
+                <img src="img/windy_day.png" alt="">
+                <%}else if( wed.currently.icon === "clear-day"){%>
+                <img src="img/clear_day.png" alt="">
+                <%}else if( wed.currently.icon === "clear-night"){%>
+                <img src="img/clear_night.png" alt="">
+                <%}else if( wed.currently.icon === "partly-cloudy-night"){%>
+                <img src="img/fair_night.png" alt="">
+                <%}else if( wed.currently.icon === "partly-cloudy-day"){%>
+                <img src="img/fair_day.png" alt="">
+                <%}else if( wed.currently.icon === "cloudy"){%>
                 <img src="img/mostly_cloudy_day.png" alt="">
+                <%}else if( wed.currently.icon === "snow"){%>
+                <img src="img/snow.png" alt="">
+                <%}%>
+
             </div>
             <div class="content__weather-box-weather-status">
                 <p><%= wed.hourly.summary %></p>
@@ -99,188 +138,122 @@
 <div class="forecast">
     <div class="forecast-box-left">
         <div class="forecast-box-temperature">
+            <% if(new Date(wed.daily.data[1].sunriseTime * 1000).getHours() > Math.abs(offset)) {%>
+            <h1 style="color:#fff;">Sunrise <%= new Date(wed.daily.data[1].sunriseTime * 1000).getHours()   %> </h1>
+            <%}else{%>
+            <h1 style="color:#fff;">Sunrise <%= new Date(wed.daily.data[1].sunriseTime * 1000).getHours()   %> </h1>
+            <%}%>
+            <% if(new Date(wed.daily.data[1].sunsetTime * 1000).getHours() > Math.abs(offset)) {%>
+            <h1 style="color:#fff;">Sunset <%=  new Date(wed.daily.data[1].sunsetTime * 1000).getHours() - new Date().getHours()  %> </h1>
+            <%}else{%>
+            <h1 style="color:#fff;">Sunset <%=  new Date(wed.daily.data[1].sunsetTime * 1000).getHours()   - new Date().getHours()  %> </h1>
+            <%}%>
+            <h1 style="color:#fff;"><%= new Date(wed.daily.data[1].sunriseTime * 1000)%></h1>
+            <h1 style="color:#fff;"><%= new Date (wed.daily.data[1].sunsetTime * 1000)%></h1>
+            <h1 style="color:#fff;"><%= new Date(wed.currently.time * 1000)%></h1>
+
+            <h1 style="color:#fff;"><%= new Date(wed.currently.time * 1000).getHours() + offset  + new Date(wed.daily.data[1].sunsetTime * 1000).getHours()%></h1>
             <h1 class="forecast-box-temperature-header">Forecast</h1>
             <div class="forecast-box-temperature-hourly">
                 <h1>Temperature</h1>
                 <div class="forecast-box-temperature-hourly-item-box">
+                    <% for (var i=0; i<30 ; i++){%>
                     <div class="forecast-box-temperature-hourly-item">
-                        <p>1 PM</p>
+                            <% if ( new Date().getHours(wed.hourly.data[i].time) + i + offset < 12 ){%>
+                        <p><%= new Date().getHours(wed.hourly.data[i].time) + i + offset %> AM</p>
+                        <%}else if( new Date().getHours(wed.hourly.data[i].time) + i + offset  < 24 ){%>
+                        <p><%= new Date().getHours(wed.hourly.data[i].time) + i + offset%> PM</p>
+                        <%}else if( new Date().getHours(wed.hourly.data[i].time) + i + offset <= 36 ){%>
+                        <p><%= new Date().getHours(wed.hourly.data[i].time) + i -24 + offset %> AM</p>
+                        <%}else if( new Date().getHours(wed.hourly.data[i].time) + i + offset < 48 ){%>
+                        <p><%= new Date().getHours(wed.hourly.data[i].time) + i -36 + offset %> PM</p>
+                        <%}else if( new Date().getHours(wed.hourly.data[i].time) + i + offset < 60 ){%>
+                        <p><%= new Date().getHours(wed.hourly.data[i].time) + i -48 + offset %> AM</p>
+                        <%}%>
+
                         <div class="img-box">
+                            <% if ( wed.hourly.data[i].icon === "rain"){%>
+                            <img src="img/scattered_showers_day_night.png" alt="">
+                            <%}else if( wed.hourly.data[i].icon === "wind"){%>
+                            <img src="img/windy_day.png" alt="">
+                            <%}else if( wed.hourly.data[i].icon === "clear-day"){%>
                             <img src="img/clear_day.png" alt="">
+                            <%}else if( wed.hourly.data[i].icon === "clear-night"){%>
+                            <img src="img/clear_night.png" alt="">
+                            <%}else if( wed.hourly.data[i].icon === "partly-cloudy-night"){%>
+                            <img src="img/fair_night.png" alt="">
+                            <%}else if( wed.hourly.data[i].icon === "partly-cloudy-day"){%>
+                            <img src="img/fair_day.png" alt="">
+                            <%}else if( wed.hourly.data[i].icon === "cloudy"){%>
+                            <img src="img/mostly_cloudy_day.png" alt="">
+                            <%}else if( wed.hourly.data[i].icon === "snow"){%>
+                            <img src="img/snow.png" alt="">
+                            <%}%>
+
                         </div>
-                        <p>73 <sub>o</sub></p>
+
+                        <p><%= wed.hourly.data[i].temperature.toFixed(0)%> <sup>o</sup></p>
                     </div>
-                    <div class="forecast-box-temperature-hourly-item">
-                        <p>1 PM</p>
-                        <div class="img-box">
-                            <img src="img/clear_day.png" alt="">
-                        </div>
-                        <p>73 <sup>o</sup></p>
-                    </div>
-                    <div class="forecast-box-temperature-hourly-item">
-                        <p>1 PM</p>
-                        <div class="img-box">
-                            <img src="img/clear_day.png" alt="">
-                        </div>
-                        <p>73 <sup>o</sup></p>
-                    </div>
-                    <div class="forecast-box-temperature-hourly-item">
-                        <p>1 PM</p>
-                        <div class="img-box">
-                            <img src="img/clear_day.png" alt="">
-                        </div>
-                        <p>73 <sup>o</sup></p>
-                    </div>
-                    <div class="forecast-box-temperature-hourly-item">
-                        <p>1 PM</p>
-                        <div class="img-box">
-                            <img src="img/clear_day.png" alt="">
-                        </div>
-                        <p>73 <sup>o</sup></p>
-                    </div>
-                    <div class="forecast-box-temperature-hourly-item">
-                        <p>1 PM</p>
-                        <div class="img-box">
-                            <img src="img/clear_day.png" alt="">
-                        </div>
-                        <p>73 <sup>o</sup></p>
-                    </div>
-                    <div class="forecast-box-temperature-hourly-item">
-                        <p>1 PM</p>
-                        <div class="img-box">
-                            <img src="img/clear_day.png" alt="">
-                        </div>
-                        <p>73 <sup>o</sup></p>
-                    </div>
-                    <div class="forecast-box-temperature-hourly-item">
-                        <p>1 PM</p>
-                        <div class="img-box">
-                            <img src="img/clear_day.png" alt="">
-                        </div>
-                        <p>73 <sup>o</sup></p>
-                    </div>
-                    <div class="forecast-box-temperature-hourly-item">
-                        <p>1 PM</p>
-                        <div class="img-box">
-                            <img src="img/clear_day.png" alt="">
-                        </div>
-                        <p>73 <sup>o</sup></p>
-                    </div>
-                    <div class="forecast-box-temperature-hourly-item">
-                        <p>1 PM</p>
-                        <div class="img-box">
-                            <img src="img/clear_day.png" alt="">
-                        </div>
-                        <p>73 <sup>o</sup></p>
-                    </div>
-                    <div class="forecast-box-temperature-hourly-item">
-                        <p>1 PM</p>
-                        <div class="img-box">
-                            <img src="img/clear_day.png" alt="">
-                        </div>
-                        <p>73 <sup>o</sup></p>
-                    </div>
+
+
+                    <%}%>
+
                 </div>
             </div>
+
             <div class="forecast-box-temperature-day">
+
+
+
+                <% for (var i=0; i<wed.daily.data.length ; i++){%>
                 <div class="forecast-box-temperature-day-box">
-                    <h1>Monday</h1>
+
+                    <h1><% if(new Date().getDay(wed.daily.data[i].time) + i === 5 || new Date().getDay(wed.daily.data[i].time) + i === 12){ %>Friday
+                        <%} else if(new Date().getDay(wed.daily.data[i].time) + i === 6 ||  new Date().getDay(wed.daily.data[i].time) + i === 13){ %>Saturday
+                        <%} else if(new Date().getDay(wed.daily.data[i].time) + i === 7 ||  new Date().getDay(wed.daily.data[i].time) + i === 0){ %>Sunday
+                        <%} else if(new Date().getDay(wed.daily.data[i].time) + i === 8 ||  new Date().getDay(wed.daily.data[i].time) + i === 1){ %>Monday
+                        <%} else if(new Date().getDay(wed.daily.data[i].time) + i === 9 ||  new Date().getDay(wed.daily.data[i].time) + i === 2){ %>Tuesday
+                        <%} else if(new Date().getDay(wed.daily.data[i].time) + i === 10 ||  new Date().getDay(wed.daily.data[i].time) + i === 3){ %>Wednesday
+                        <%} else if(new Date().getDay(wed.daily.data[i].time) + i === 11 ||  new Date().getDay(wed.daily.data[i].time) + i === 4){ %>Thursday<%}%></h1>
+
                     <div class="img-box">
+                        <% if ( wed.hourly.data[i].icon === "rain"){%>
+                        <img src="img/scattered_showers_day_night.png" alt="">
+                        <%}else if( wed.hourly.data[i].icon === "wind"){%>
+                        <img src="img/windy_day.png" alt="">
+                        <%}else if( wed.hourly.data[i].icon === "clear-day"){%>
                         <img src="img/clear_day.png" alt="">
+                        <%}else if( wed.hourly.data[i].icon === "clear-night"){%>
+                        <img src="img/clear_night.png" alt="">
+                        <%}else if( wed.hourly.data[i].icon === "partly-cloudy-night"){%>
+                        <img src="img/fair_night.png" alt="">
+                        <%}else if( wed.hourly.data[i].icon === "partly-cloudy-day"){%>
+                        <img src="img/fair_day.png" alt="">
+                        <%}else if( wed.hourly.data[i].icon === "cloudy"){%>
+                        <img src="img/mostly_cloudy_day.png" alt="">
+                        <%}else if( wed.hourly.data[i].icon === "snow"){%>
+                        <img src="img/snow.png" alt="">
+                        <%}%>
                     </div>
                     <div class="img-box flex">
-                        <img src="img/rain_icon.png" alt="">
-                        <p>0%</p>
+                        <%if(wed.daily.data[i].precipProbability >=0.9) {%><img src="img/rain_icon_100.png" alt="">
+                        <%}else if(wed.daily.data[i].precipProbability >0.7) {%><img src="img/rain_icon_70.png" alt="">
+                        <%}else if(wed.daily.data[i].precipProbability >0.6) {%><img src="img/rain_icon_60.png" alt="">
+                        <%}else if(wed.daily.data[i].precipProbability >0.5) {%><img src="img/rain_icon_50.png" alt="">
+                        <%}else if(wed.daily.data[i].precipProbability >0.4) {%><img src="img/rain_icon_40.png" alt="">
+                        <%}else if(wed.daily.data[i].precipProbability >0.1) {%><img src="img/rain_icon_10.png" alt="">
+                        <%}else if(wed.daily.data[i].precipProbability >=0.0) {%><img src="img/rain_icon_00.png" alt=""><%}%>
+                        <p><%=(wed.daily.data[i].precipProbability * 100).toFixed(0)%>%</p>
                     </div>
                     <div class="box-high-low">
-                        <h1>74</h1>
-                        <h1>64</h1>
+                        <h1><%= wed.daily.data[i].temperatureHigh.toFixed(0)%> <sup>o</sup></h1>
+                        <h1><%= wed.daily.data[i].temperatureLow.toFixed(0)%> <sup>o</sup></h1>
                     </div>
                 </div>
-                <div class="forecast-box-temperature-day-box">
-                    <h1>Monday</h1>
-                    <div class="img-box">
-                        <img src="img/clear_day.png" alt="">
-                    </div>
-                    <div class="img-box flex">
-                        <img src="img/rain_icon.png" alt="">
-                        <p>0%</p>
-                    </div>
-                    <div class="box-high-low">
-                        <h1>74</h1>
-                        <h1>64</h1>
-                    </div>
-                </div>
-                <div class="forecast-box-temperature-day-box">
-                    <h1>Monday</h1>
-                    <div class="img-box">
-                        <img src="img/clear_day.png" alt="">
-                    </div>
-                    <div class="img-box flex">
-                        <img src="img/rain_icon.png" alt="">
-                        <p>0%</p>
-                    </div>
-                    <div class="box-high-low">
-                        <h1>74</h1>
-                        <h1>64</h1>
-                    </div>
-                </div>
-                <div class="forecast-box-temperature-day-box">
-                    <h1>Monday</h1>
-                    <div class="img-box">
-                        <img src="img/clear_day.png" alt="">
-                    </div>
-                    <div class="img-box flex">
-                        <img src="img/rain_icon.png" alt="">
-                        <p>0%</p>
-                    </div>
-                    <div class="box-high-low">
-                        <h1>74</h1>
-                        <h1>64</h1>
-                    </div>
-                </div>
-                <div class="forecast-box-temperature-day-box">
-                    <h1>Monday</h1>
-                    <div class="img-box">
-                        <img src="img/clear_day.png" alt="">
-                    </div>
-                    <div class="img-box flex">
-                        <img src="img/rain_icon.png" alt="">
-                        <p>0%</p>
-                    </div>
-                    <div class="box-high-low">
-                        <h1>74</h1>
-                        <h1>64</h1>
-                    </div>
-                </div>
-                <div class="forecast-box-temperature-day-box">
-                    <h1>Monday</h1>
-                    <div class="img-box">
-                        <img src="img/clear_day.png" alt="">
-                    </div>
-                    <div class="img-box flex">
-                        <img src="img/rain_icon.png" alt="">
-                        <p>0%</p>
-                    </div>
-                    <div class="box-high-low">
-                        <h1>74</h1>
-                        <h1>64</h1>
-                    </div>
-                </div>
-                <div class="forecast-box-temperature-day-box">
-                    <h1>Monday</h1>
-                    <div class="img-box">
-                        <img src="img/clear_day.png" alt="">
-                    </div>
-                    <div class="img-box flex">
-                        <img src="img/rain_icon.png" alt="">
-                        <p>0%</p>
-                    </div>
-                    <div class="box-high-low">
-                        <h1>74</h1>
-                        <h1>64</h1>
-                    </div>
-                </div>
+
+
+                <%}%>
+
             </div>
             <div class="forecast-day-box">
                 <h1 class="fiveDay active"><a class="fiveDay-link" href="">5 day</a></h1>
@@ -298,31 +271,68 @@
                         <%}else if(new Date().getHours() >6){%>Morning <%}%>
                     </h3>
 
-
+                    <p>Humidity</p>
                     <div class="img-box flex-center">
-                        <img src="img/rain_icon.png" alt="">
+                        <%if(wed.hourly.data[0].humidity >=0.9) {%><img src="img/rain_icon_100.png" alt="">
+                        <%}else if(wed.hourly.data[0].humidity >0.7) {%><img src="img/rain_icon_70.png" alt="">
+                        <%}else if(wed.hourly.data[0].humidity >0.6) {%><img src="img/rain_icon_60.png" alt="">
+                        <%}else if(wed.hourly.data[0].humidity >0.5) {%><img src="img/rain_icon_50.png" alt="">
+                        <%}else if(wed.hourly.data[0].humidity >0.4) {%><img src="img/rain_icon_40.png" alt="">
+                        <%}else if(wed.hourly.data[0].humidity >0.1) {%><img src="img/rain_icon_10.png" alt="">
+                        <%}else if(wed.hourly.data[0].humidity >=0.0) {%><img src="img/rain_icon_00.png" alt=""><%}%>
+                        <p><%=(wed.hourly.data[0].humidity *100).toFixed(0) %> %</p>
                     </div>
+                    <p>Chance of rain</p>
                     <p><%= (wed.hourly.data[0].precipProbability * 100).toFixed(1) %>%</p>
                 </div>
                 <div class="forecast-box-rain-content-item">
                     <h3 class="rain-2"></h3>
+                    <p>Humidity</p>
                     <div class="img-box flex-center">
-                        <img src="img/rain_icon.png" alt="">
+
+                        <%if(wed.hourly.data[6].humidity >=0.9) {%><img src="img/rain_icon_100.png" alt="">
+                        <%}else if(wed.hourly.data[6].humidity >0.7) {%><img src="img/rain_icon_70.png" alt="">
+                        <%}else if(wed.hourly.data[6].humidity >0.6) {%><img src="img/rain_icon_60.png" alt="">
+                        <%}else if(wed.hourly.data[6].humidity >0.5) {%><img src="img/rain_icon_50.png" alt="">
+                        <%}else if(wed.hourly.data[6].humidity >0.4) {%><img src="img/rain_icon_40.png" alt="">
+                        <%}else if(wed.hourly.data[6].humidity >0.1) {%><img src="img/rain_icon_10.png" alt="">
+                        <%}else if(wed.hourly.data[6].humidity >=0.0) {%><img src="img/rain_icon_00.png" alt=""><%}%>
+                        <p><%=(wed.hourly.data[6].humidity *100).toFixed(0) %> %</p>
+
                     </div>
+                    <p>Chance of rain</p>
                     <p><%= (wed.hourly.data[6].precipProbability * 100).toFixed(1) %>%</p>
                 </div>
                 <div class="forecast-box-rain-content-item">
                     <h3 class="rain-3"></h3>
+                    <p>Humidity</p>
                     <div class="img-box flex-center">
-                        <img src="img/rain_icon.png" alt="">
+                        <%if(wed.hourly.data[12].humidity >=0.9) {%><img src="img/rain_icon_100.png" alt="">
+                        <%}else if(wed.hourly.data[12].humidity >0.7) {%><img src="img/rain_icon_70.png" alt="">
+                        <%}else if(wed.hourly.data[12].humidity >0.6) {%><img src="img/rain_icon_60.png" alt="">
+                        <%}else if(wed.hourly.data[12].humidity >0.5) {%><img src="img/rain_icon_50.png" alt="">
+                        <%}else if(wed.hourly.data[12].humidity >0.4) {%><img src="img/rain_icon_40.png" alt="">
+                        <%}else if(wed.hourly.data[12].humidity >0.1) {%><img src="img/rain_icon_10.png" alt="">
+                        <%}else if(wed.hourly.data[12].humidity >=0.0) {%><img src="img/rain_icon_00.png" alt=""><%}%>
+                        <p><%=(wed.hourly.data[12].humidity *100).toFixed(0) %> %</p>
                     </div>
+                    <p>Chance of rain</p>
                     <p><%= (wed.hourly.data[12].precipProbability * 100).toFixed(1) %>%</p>
                 </div>
                 <div class="forecast-box-rain-content-item">
                     <h3 class="rain-4"></h3>
+                    <p>Humidity</p>
                     <div class="img-box flex-center">
-                        <img src="img/rain_icon.png" alt="">
+                        <%if(wed.hourly.data[18].humidity >=0.9) {%><img src="img/rain_icon_100.png" alt="">
+                        <%}else if(wed.hourly.data[18].humidity >0.7) {%><img src="img/rain_icon_70.png" alt="">
+                        <%}else if(wed.hourly.data[18].humidity >0.6) {%><img src="img/rain_icon_60.png" alt="">
+                        <%}else if(wed.hourly.data[18].humidity >0.5) {%><img src="img/rain_icon_50.png" alt="">
+                        <%}else if(wed.hourly.data[18].humidity >0.4) {%><img src="img/rain_icon_40.png" alt="">
+                        <%}else if(wed.hourly.data[18].humidity >0.1) {%><img src="img/rain_icon_10.png" alt="">
+                        <%}else if(wed.hourly.data[18].humidity >=0.0) {%><img src="img/rain_icon_00.png" alt=""><%}%>
+                        <p><%=(wed.hourly.data[12].humidity *100).toFixed(0) %> %</p>
                     </div>
+                    <p>Chance of rain</p>
                     <p><%= (wed.hourly.data[18].precipProbability * 100).toFixed(1) %>%</p>
                 </div>
             </div>
@@ -355,7 +365,23 @@
             <div class="forecast-box-details-content">
                 <div class="forecast-box-details-content-img">
                     <div class="forecast-box-details-content-img-box">
+                        <% if ( wed.currently.icon === "rain"){%>
+                        <img src="img/scattered_showers_day_night.png" alt="">
+                        <%}else if( wed.currently.icon === "wind"){%>
+                        <img src="img/windy_day.png" alt="">
+                        <%}else if( wed.currently.icon === "clear-day"){%>
                         <img src="img/clear_day.png" alt="">
+                        <%}else if( wed.currently.icon === "clear-night"){%>
+                        <img src="img/clear_night.png" alt="">
+                        <%}else if( wed.currently.icon === "partly-cloudy-night"){%>
+                        <img src="img/fair_night.png" alt="">
+                        <%}else if( wed.currently.icon === "partly-cloudy-day"){%>
+                        <img src="img/fair_day.png" alt="">
+                        <%}else if( wed.currently.icon === "cloudy"){%>
+                        <img src="img/mostly_cloudy_day.png" alt="">
+                        <%}else if( wed.currently.icon === "snow"){%>
+                        <img src="img/snow.png" alt="">
+                        <%}%>
                     </div>
                 </div>
                 <div class="forecast-box-details-content-text">

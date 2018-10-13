@@ -15,7 +15,8 @@ body {
 
 .img-box {
   height: 3rem;
-  width: 3rem; }
+  width: 3rem;
+  white-space: nowrap; }
   .img-box.flex-center {
     display: flex;
     justify-content: center;
@@ -24,18 +25,20 @@ body {
     margin-right: auto; }
   .img-box.flex {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    justify-content: flex-start; }
     .img-box.flex > p {
       font-family: "Bai Jamjuree";
       color: #fff;
-      font-size: 1.2rem; }
+      font-size: 1.3rem; }
   .img-box img {
     width: 100%;
     height: 100%;
     object-fit: contain; }
 
 .box-high-low {
-  display: flex; }
+  display: flex;
+  justify-content: flex-end; }
   .box-high-low > *:not(:last-child) {
     padding-right: 2rem;
     font-family: "Bai Jamjuree";
@@ -162,7 +165,9 @@ body {
       padding: .5rem 1rem;
       border-bottom: 1px solid lightgray;
       outline: none;
-      margin: 0 1rem; }
+      margin: 0 1rem;
+      color: #fff;
+      font-size: 1.6rem; }
     .navigation__form-submit {
       border: none;
       border-radius: 5px;
@@ -179,10 +184,12 @@ body {
   height: 100vh;
   top: 0;
   left: 0;
-  background-position: cover;
+  background-size: cover;
   background-position: center; }
-  .background__box.sunny {
-    background-image: url("../img/sunny_day.jpg"); }
+  .background__box.rain__day {
+    background-image: url("../img/background__rain__day.jpg"); }
+  .background__box.rain__night {
+    background-image: url("../img/background__raind__night.jpeg"); }
 
 .forecast {
   width: 80vw;
@@ -247,6 +254,8 @@ body {
         justify-content: space-between;
         padding: .5rem 1rem;
         border-bottom: 1px solid lightgray; }
+        .forecast-box-temperature-day-box > * {
+          flex: 0 0 25%; }
         .forecast-box-temperature-day-box > h1 {
           font-family: "Bai Jamjuree";
           color: #fff;
@@ -271,7 +280,9 @@ body {
       .forecast-box-rain-content-item h3 {
         font-family: "Bai Jamjuree";
         color: #fff;
-        font-size: 1.7rem; }
+        font-size: 1.7rem;
+        padding-bottom: .5rem;
+        border-bottom: 1px solid #fff; }
       .forecast-box-rain-content-item > * {
         text-align: center;
         padding: .3rem; }
@@ -684,6 +695,8 @@ body {
         justify-content: space-between;
         padding: .5rem 1rem;
         border-bottom: 1px solid lightgray; }
+        .forecast-box-temperature-day-box > * {
+          flex: 0 0 25%; }
         .forecast-box-temperature-day-box > h1 {
           font-family: "Bai Jamjuree";
           color: #fff;
@@ -708,7 +721,9 @@ body {
       .forecast-box-rain-content-item h3 {
         font-family: "Bai Jamjuree";
         color: #fff;
-        font-size: 1.7rem; }
+        font-size: 1.7rem;
+        padding-bottom: .5rem;
+        border-bottom: 1px solid #fff; }
       .forecast-box-rain-content-item > * {
         text-align: center;
         padding: .3rem; }

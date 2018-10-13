@@ -8,10 +8,13 @@
     top:0;
     left: 0;
 
-    background-position: cover;
+    background-size: cover;
     background-position: center;
-    &.sunny{
-      background-image: url("../img/sunny_day.jpg");
+    &.rain__day{
+      background-image: url("../img/background__rain__day.jpg");
+    }
+    &.rain__night{
+      background-image: url("../img/background__raind__night.jpeg");
     }
   }
 }
