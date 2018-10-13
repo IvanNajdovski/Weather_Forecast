@@ -52,7 +52,7 @@ app.get("/", function(req,response){
 }).then((res)=>{
         var number = Math.round(Math.random()*10);
     var url = `https://farm${res.data.photos.photo[number].farm}.staticflickr.com/${res.data.photos.photo[number].server}/${res.data.photos.photo[number].id}_${res.data.photos.photo[number].secret}.jpg`;
-        response.render("home", {offsetH: offsetH,offset: offset, wed: wedRes, geo: geoLoc , photo: url});
+        response.render("home", {offsetH : offsetH, offset : offset, wed: wedRes, geo: geoLoc , photo: url});
 
 
 }).catch((e) => {
@@ -64,12 +64,12 @@ app.get("/", function(req,response){
 });
 
 
-})
+});
 app.post("/", function(req,response){
     var sunrise;
     var offsetH;
     var offset;
-     var address = req.body.name;
+    var address = req.body.name;
     var wedRes;
     var geoLoc;
     var location;
