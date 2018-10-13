@@ -16,5 +16,32 @@
     &.rain__night{
       background-image: url("../img/background__raind__night.jpeg");
     }
+
+    &.wind__day{
+      background-image: url("../img/background__wind.jpg");
+    }
+    &.clear__day{
+      background-image: url("../img/background__clear__day.jpg");
+    }
+    &.clear__night{
+      background-image: url("../img/background__clear__night.jpg");
+    }
+    &.partly__day{
+      background-image: url("../img/background__fair__day.jpg");
+    }
+    &.partly__night{
+      background-image: url("../img/background__fair__night.gif");
+    }
+    &.snow__night{
+      background-image: url("../img/background__snow__night.jpg");
+    }
+    &.snow__day{
+      background-image: url("../img/background__snow__day.jpg");
+    }
+    &.cloudy__day{
+      background-image: url("../img/background__heavy__clouds__day.jpg");
+    }
+
+
   }
 }

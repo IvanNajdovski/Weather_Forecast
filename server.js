@@ -52,7 +52,7 @@ app.set('view engine', 'ejs');
 
 app.get("/", function(req,response){
     var sunrise;
-
+    var offsetH;
     var timeFormat;
     var time;
     var address = "Skopje"
@@ -76,7 +76,8 @@ app.get("/", function(req,response){
     return axios.get(weatherUrl);
 }).then((response) => {
         time = timezone(response.data.currently.time * 1000).tz(response.data.timezone).format("Z z");
-        offset = Number(time.split(":")[0] ) -2
+    offsetH = (Number(time.split(":")[0] ) -2)
+        offset = (Number(time.split(":")[0] ) -2)*1000*60*60;
     sunrise = timezone(response.data.daily.data[0].sunsetTime* 1000).tz(response.data.timezone).format();
         console.log(sunrise);
 
@@ -105,7 +106,7 @@ app.get("/", function(req,response){
 })
 app.post("/", function(req,response){
     var sunrise;
-
+    var offsetH;
     var offset;
      var address = req.body.name;
     var wedRes;
@@ -129,7 +130,8 @@ app.post("/", function(req,response){
 }).then((response) => {
         time = timezone(response.data.currently.time * 1000).tz(response.data.timezone).format("Z z");
         sunrise = timezone(response.data.daily.data[0].sunsetTime * 1000).tz(response.data.timezone).format();
-        offset = Number(time.split(":")[0] ) -2
+        offsetH = (Number(time.split(":")[0] ) -2)
+    offset = (Number(time.split(":")[0] ) -2)*1000*60*60;
     console.log(sunrise)
 
     console.log(offset)
@@ -142,7 +144,7 @@ app.post("/", function(req,response){
 }).then((res)=>{
         var number = Math.round(Math.random()*10);
     var url = `https://farm${res.data.photos.photo[number].farm}.staticflickr.com/${res.data.photos.photo[number].server}/${res.data.photos.photo[number].id}_${res.data.photos.photo[number].secret}_b.jpg`;
-    response.render("home", {offset: offset, wed: wedRes, geo: geoLoc , photo: url})
+    response.render("home", {offsetH : offsetH,offset: offset, wed: wedRes, geo: geoLoc , photo: url})
 
 
 }).catch((e) => {

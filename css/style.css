@@ -129,7 +129,9 @@ body {
     filter: invert(100%); }
 
 .navigation {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 2;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.3); }
@@ -190,6 +192,22 @@ body {
     background-image: url("../img/background__rain__day.jpg"); }
   .background__box.rain__night {
     background-image: url("../img/background__raind__night.jpeg"); }
+  .background__box.wind__day {
+    background-image: url("../img/background__wind.jpg"); }
+  .background__box.clear__day {
+    background-image: url("../img/background__clear__day.jpg"); }
+  .background__box.clear__night {
+    background-image: url("../img/background__clear__night.jpg"); }
+  .background__box.partly__day {
+    background-image: url("../img/background__fair__day.jpg"); }
+  .background__box.partly__night {
+    background-image: url("../img/background__fair__night.gif"); }
+  .background__box.snow__night {
+    background-image: url("../img/background__snow__night.jpg"); }
+  .background__box.snow__day {
+    background-image: url("../img/background__snow__day.jpg"); }
+  .background__box.cloudy__day {
+    background-image: url("../img/background__heavy__clouds__day.jpg"); }
 
 .forecast {
   width: 80vw;
