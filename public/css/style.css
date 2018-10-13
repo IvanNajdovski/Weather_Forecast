@@ -132,6 +132,27 @@ body {
     object-fit: cover;
     filter: invert(100%); }
 
+.location-header-container {
+  display: flex;
+  align-items: center; }
+  .location-header-container > a {
+    text-decoration: none;
+    color: inherit; }
+
+.addLocation {
+  cursor: pointer;
+  margin-left: 6rem;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+  padding: 1rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
 @keyframes logo {
   0% {
     transform: translateX(0); }
@@ -224,13 +245,15 @@ body {
   .background__box.partly__day {
     background-image: url("../img/background__fair__day.jpg"); }
   .background__box.partly__night {
-    background-image: url("../img/background__fair__night.gif"); }
+    background-image: url("../img/background__fair__night.jpg"); }
   .background__box.snow__night {
     background-image: url("../img/background__snow__night.jpg"); }
   .background__box.snow__day {
     background-image: url("../img/background__snow__day.jpg"); }
   .background__box.cloudy__day {
     background-image: url("../img/background__heavy__clouds__day.jpg"); }
+  .background__box.cloudy__night {
+    background-image: url("../img/background__heavy__fair__night.gif"); }
 
 .forecast {
   width: 80vw;

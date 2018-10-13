@@ -30,7 +30,7 @@
       background-image: url("../img/background__fair__day.jpg");
     }
     &.partly__night{
-      background-image: url("../img/background__fair__night.gif");
+      background-image: url("../img/background__fair__night.jpg");
     }
     &.snow__night{
       background-image: url("../img/background__snow__night.jpg");
@@ -40,6 +40,9 @@
     }
     &.cloudy__day{
       background-image: url("../img/background__heavy__clouds__day.jpg");
+    }
+    &.cloudy__night{
+      background-image: url("../img/background__heavy__fair__night.gif");
     }
 
 

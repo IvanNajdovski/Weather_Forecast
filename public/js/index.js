@@ -107,6 +107,19 @@ $(document).ready(function(){
                 }
 
         }
+    });
+
+    $(".addToMyLocations").on("click", function(){
+        var text = $("<li class=\"location__item-box-location\"></li>").text($(".content__location-box-header").text());
+        $(".location__item-box").append(text);
+        //$(".content__location-box-header").text()
+    });
+    $(".location__item-box-location").on("click",function(e){
+        console.log($(this).text())
+        $(".navigation__form-input").attr("value",`${$(this).text().trim()}`);
+
+
+       $(".navigation__form-submit").submit()
     })
 
 
