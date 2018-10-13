@@ -1,3 +1,18 @@
+
+function isScrolledIntoView(a) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+    var elemTop = a.offset().top;
+    var elemBottom = elemTop + a.outerHeight();
+
+
+    if (elemBottom > docViewTop && elemTop < docViewBottom) {
+        a.addClass("active");
+    }
+};
+
+
+
 $(document).ready(function(){
     var IwindowWidth = $(window).width();
     var IelementAbs = $(".location").outerWidth();
@@ -62,22 +77,37 @@ $(document).ready(function(){
     setTimeout(function(){
         $(".navigation__logo").addClass("active");
     },3000);
-        setTimeout(function(){
-            var currentHour = $(".currentHour").text()
-            var sunrise = $(".sunrise").text().split(":")[0].trim()
-            var sunset = $(".sunset").text().split(":")[0].trim()
-            var width =(currentHour-sunrise) * 100 / (sunset-sunrise);
-            var rotate = ((135/100)*width)+20
-            console.log(currentHour , sunrise ,sunset , width)
-            $(".forecast-box-sunmoon-content-box-background").css("width",`${width}%`);
-            $(".forecast-box-sunmoon-content-box-background").css("transition","width 2s");
-            $(".forecast-box-sunmoon-content-box-sun").css("transform", `translate(-5rem, -5rem) rotate(${rotate}deg`);
-            $(".forecast-box-sunmoon-content-box-sun").css("transition","transform 2s");
-            if( currentHour < sunrise && currentHour > sunset){
-                //$(".sun-circle").css("display","none")
-                $(".forecast-box-sunmoon-content-box-sun").css("display","none")
-                $(".forecast-box-sunmoon-content-box-background").css("width",`0`);
-            }
-        },2000)
+
+
+    $(window).on("resize scroll",function () {
+        var currentHour = $(".currentHour").text()
+        var sunrise = $(".sunrise").text().split(":")[0].trim()
+        var sunset = $(".sunset").text().split(":")[0].trim()
+        var width =(currentHour-sunrise) * 100 / (sunset-sunrise);
+        var rotate = ((135/100)*width)+20
+
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+        var elemTop = $(".forecast-box-sunmoon-content-box-background").offset().top;
+        var elemBottom = elemTop + $(".forecast-box-sunmoon-content-box-background").outerHeight();
+
+
+        if (elemBottom > docViewTop && elemTop < docViewBottom -200) {
+
+
+                console.log(currentHour , sunrise ,sunset , width)
+                $(".forecast-box-sunmoon-content-box-background").css("width",`${width}%`);
+                $(".forecast-box-sunmoon-content-box-background").css("transition","width 2s");
+                $(".forecast-box-sunmoon-content-box-sun").css("transform", `translate(-5rem, -5rem) rotate(${rotate}deg`);
+                $(".forecast-box-sunmoon-content-box-sun").css("transition","transform 2s");
+                if( currentHour < sunrise && currentHour > sunset){
+                    //$(".sun-circle").css("display","none")
+                    $(".forecast-box-sunmoon-content-box-sun").css("display","none")
+                    $(".forecast-box-sunmoon-content-box-background").css("width",`0`);
+                }
+
+        }
+    })
+
 
 })

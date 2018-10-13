@@ -26,13 +26,14 @@ body {
   .img-box.flex {
     display: flex;
     align-items: center;
-    justify-content: flex-start; }
+    justify-items: flex-start; }
+    .img-box.flex > * {
+      flex: 0 0 50%; }
     .img-box.flex > p {
       font-family: "Bai Jamjuree";
       color: #fff;
       font-size: 1.3rem; }
   .img-box img {
-    width: 100%;
     height: 100%;
     object-fit: contain; }
 
@@ -40,12 +41,15 @@ body {
   display: flex;
   justify-content: flex-end; }
   .box-high-low > *:not(:last-child) {
-    padding-right: 2rem;
+    flex: 0 0 50%;
     font-family: "Bai Jamjuree";
     color: #fff;
     font-size: 1.6rem;
-    text-shadow: 0 .5rem .5rem #000; }
+    text-shadow: 0 .5rem .5rem #000;
+    text-align: right; }
   .box-high-low > :last-child {
+    text-align: right;
+    flex: 0 0 50%;
     font-family: "Bai Jamjuree";
     color: #b8c3ff;
     font-size: 1.6rem;
@@ -195,8 +199,8 @@ body {
       background-color: #6a6478;
       padding: .5rem 2rem;
       font-family: "Niramit";
-      font-size: .9rem;
-      font-weight: 400;
+      font-weight: 700;
+      font-size: 1.1rem;
       color: lightgray; }
 
 .background__box {
@@ -525,6 +529,9 @@ body {
   display: none; }
 
 #longitude {
+  display: none; }
+
+.currentHour {
   display: none; }
 
 #map {
@@ -970,6 +977,9 @@ body {
   display: none; }
 
 #longitude {
+  display: none; }
+
+.currentHour {
   display: none; }
 
 #map {
