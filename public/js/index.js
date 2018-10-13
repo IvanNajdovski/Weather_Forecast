@@ -12,6 +12,16 @@ $(document).ready(function(){
     })
     $(".forecast-box-sunmoon").on("click", function(){
         $(".forecast-box-sunmoon-content-box-sun").addClass("active");
+    });
+
+    $(window).on("scroll",function(){
+        if($(window).scrollTop() > 0){
+            $(".navigation").addClass("active");
+        }else{
+            if($(".navigation").hasClass("active")){
+                $(".navigation").removeClass("active")
+            }
+        }
     })
     // --------------------WIND TURBINE ROTATION--------------------------
 
@@ -62,7 +72,12 @@ $(document).ready(function(){
             $(".forecast-box-sunmoon-content-box-background").css("width",`${width}%`);
             $(".forecast-box-sunmoon-content-box-background").css("transition","width 2s");
             $(".forecast-box-sunmoon-content-box-sun").css("transform", `translate(-5rem, -5rem) rotate(${rotate}deg`);
-            $(".forecast-box-sunmoon-content-box-sun").css("transition","all 2s");
+            $(".forecast-box-sunmoon-content-box-sun").css("transition","transform 2s");
+            if( currentHour < sunrise && currentHour > sunset){
+                //$(".sun-circle").css("display","none")
+                $(".forecast-box-sunmoon-content-box-sun").css("display","none")
+                $(".forecast-box-sunmoon-content-box-background").css("width",`0`);
+            }
         },2000)
 
 })

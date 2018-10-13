@@ -26,35 +26,27 @@
     <div class="background__box wind__day"></div>
         <%}else if( wed.currently.icon === "clear-day"){%>
     <div class="background__box clear__day"></div>
-        <%}else if( wed.currently.icon === "clear-night"){%>
-    <div class="background__box clear__night"></div>
-        <%}else if( wed.currently.icon === "partly-cloudy-night"){%>
-    <div class="background__box partly__night"></div>
         <%}else if( wed.currently.icon === "partly-cloudy-day"){%>
     <div class="background__box partly__day"></div>
         <%}else if( wed.currently.icon === "cloudy"){%>
-    <div class="background__box cloudy__day"></div>
+    <div class="background__box cloudy__dat"></div>
         <%}else if( wed.currently.icon === "snow"){%>
     <div class="background__box snow__day"></div>
         <%}%>
 
     <%}else{%>
     <% if ( wed.currently.icon === "rain"){%>
-    <div class="background__box rain__day"></div>
+    <div class="background__box rain__night"></div>
     <%}else if( wed.currently.icon === "wind"){%>
     <div class="background__box wind__day"></div>
-    <%}else if( wed.currently.icon === "clear-day"){%>
-    <div class="background__box clear__day"></div>
     <%}else if( wed.currently.icon === "clear-night"){%>
-    <div class="background__box rain__day"></div>
+    <div class="background__box rain__night"></div>
     <%}else if( wed.currently.icon === "partly-cloudy-night"){%>
-    <div class="background__box rain__day"></div>
-    <%}else if( wed.currently.icon === "partly-cloudy-day"){%>
-    <div class="background__box partly__day"></div>
+    <div class="background__box rain__night"></div>
     <%}else if( wed.currently.icon === "cloudy"){%>
-    <div class="background__box cloudy__day"></div>
+    <div class="background__box cloudy__night"></div>
     <%}else if( wed.currently.icon === "snow"){%>
-    <div class="background__box snow__day"></div>
+    <div class="background__box snow__night"></div>
     <%}%>
     <%}%>
 
@@ -428,7 +420,7 @@
             <div class="forecast-box-sunmoon-content">
                 <div class="forecast-box-sunmoon-content-box">
                     <div class="forecast-box-sunmoon-content-box-background">
-                        <img src="img/weather_circle.png" alt="">
+                        <img class="sun-circle" src="img/weather_circle.png" alt="">
                     </div>
                     <div class="forecast-box-sunmoon-content-box-sun">
                         <img src="img/clear_day.png" alt="">

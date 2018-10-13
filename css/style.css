@@ -144,6 +144,8 @@ body {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 100; }
+  .navigation.active {
+    background-color: rgba(0, 0, 0, 0.8); }
   .navigation__box {
     padding: .5rem 6rem;
     display: flex;
