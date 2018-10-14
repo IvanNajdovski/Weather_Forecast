@@ -107,18 +107,20 @@ $(document).ready(function () {
         }
     });
     var getLocation = JSON.parse(localStorage.getItem("myLocation"));
-    getLocation.forEach(function (val) {
-        if (val === $(".content__location-box-header").text()) {
+    if(getLocation) {
+        getLocation.forEach(function (val) {
+            if (val === $(".content__location-box-header").text()) {
 
-            $(".addToMyLocations").attr("title", "Remove From My Locations");
-            $(".addLocation").addClass("active");
-        }
-        var text = $("<li class='location__item-box-location'></li>").text(val);
-        $(".location__item-box").append(text);
-    });
+                $(".addToMyLocations").attr("title", "Remove From My Locations");
+                $(".addLocation").addClass("active");
+            }
+            var text = $("<li class='location__item-box-location'></li>").text(val);
+            $(".location__item-box").append(text);
+        });
+    }
 
     $(".addToMyLocations").on("click", function (e) {
-        e.stopImmediatePropagation();
+
         e.preventDefault();
         if ($(".addLocation").hasClass("active")) {
             e.stopImmediatePropagation();
@@ -141,7 +143,7 @@ $(document).ready(function () {
 
 
         } else {
-            e.stopImmediatePropagation();
+
             e.preventDefault();
             var location = [];
             var start = JSON.parse(localStorage.getItem('myLocation'));
@@ -152,7 +154,7 @@ $(document).ready(function () {
 
             }
 
-            console.log("before pushing", location);
+
             location.push(`${$(".content__location-box-header").text()}`);
             localStorage.setItem("myLocation", JSON.stringify(location));
             var location = localStorage.getItem("myLocation");
@@ -167,7 +169,7 @@ $(document).ready(function () {
         //
     });
     $(document).on("click", ".location__item-box-location", function (event, e) {
-        e.stopImmediatePropagation();
+        
         event.preventDefault();
         $("#team_name").attr("value", `${$(this).text()}`);
         $(".navigation__form").submit();
