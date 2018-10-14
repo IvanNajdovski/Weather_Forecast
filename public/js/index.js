@@ -119,6 +119,7 @@ $(document).ready(function () {
 
     $(".addToMyLocations").on("click", function (e) {
         if ($(".addLocation").hasClass("active")) {
+            e.stopImmediatePropagation()
             e.preventDefault()
 
             var start = JSON.parse(localStorage.getItem('myLocation'));
@@ -138,6 +139,7 @@ $(document).ready(function () {
 
 
         } else {
+            e.stopImmediatePropagation()
             e.preventDefault()
             var location = [];
             var start = JSON.parse(localStorage.getItem('myLocation'));
@@ -163,6 +165,7 @@ $(document).ready(function () {
         //
     });
     $(document).on("click", ".location__item-box-location", function (event, e) {
+        e.stopImmediatePropagation()
         event.preventDefault()
         $("#team_name").attr("value", `${$(this).text()}`);
         $(".navigation__form").submit();
