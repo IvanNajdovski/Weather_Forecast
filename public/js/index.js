@@ -118,6 +118,8 @@ $(document).ready(function () {
     });
 
     $(".addToMyLocations").on("click", function (e) {
+        e.stopImmediatePropagation()
+        e.preventDefault()
         if ($(".addLocation").hasClass("active")) {
             e.stopImmediatePropagation()
             e.preventDefault()
