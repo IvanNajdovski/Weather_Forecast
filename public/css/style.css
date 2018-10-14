@@ -286,7 +286,7 @@ body {
     .forecast {
       top: 55rem;
       left: 0;
-      width: 100% !important; } }
+      width: 98% !important; } }
   .forecast-box-left {
     flex: 1 1 50%;
     margin: .5rem;
@@ -838,7 +838,7 @@ body {
     .forecast {
       top: 55rem;
       left: 0;
-      width: 100% !important; } }
+      width: 98% !important; } }
   .forecast-box-left {
     flex: 1 1 50%;
     margin: .5rem;
