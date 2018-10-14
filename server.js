@@ -47,7 +47,7 @@ app.get("/", function(req,response){
         wedRes = response.data;
     var temperature = response.data.currently.temperature;
     var apparentTemperature = response.data.currently.apparentTemperature;
-    var picLoc = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c11bf5d4dd61901c8e1fb260bf4a1ad0&text=city&text=view&content_type=screenshot&lat=${lat}&lon=${lng}&format=json&nojsoncallback=1`;
+    var picLoc = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c11bf5d4dd61901c8e1fb260bf4a1ad0&text=city+view&content_type=screenshot&lat=${lat}&lon=${lng}&format=json&nojsoncallback=1`;
     return axios.get(picLoc);
 }).then((res)=>{
         if (res.data.photos.photo.length > 3){
@@ -105,7 +105,7 @@ app.post("/", function(req,response){
         wedRes = response.data;
     var temperature = response.data.currently.temperature;
     var apparentTemperature = response.data.currently.apparentTemperature;
-    var picLoc = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c11bf5d4dd61901c8e1fb260bf4a1ad0&text=city&content_type=screenshot&lat=${lat}&lon=${lng}&format=json&nojsoncallback=1`;
+    var picLoc = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c11bf5d4dd61901c8e1fb260bf4a1ad0&text=city+view&content_type=screenshot&lat=${lat}&lon=${lng}&format=json&nojsoncallback=1`;
     return axios.get(picLoc);
 }).then((res)=>{
 
