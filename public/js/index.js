@@ -200,11 +200,11 @@ $(document).ready(function () {
     $(".fiveDay").on("click",function(e){
         e.preventDefault()
         if($(".seven").hasClass("active")){
-            $(".forecast-box-temperature-day").css("height",`${$(".forecast-box-temperature-day-box").outerHeight() * 7}`);
+            $(".forecast-box-temperature-day").css("height",`${$(".forecast-box-temperature-day-box").outerHeight() * 5}`);
             $(".seven").removeClass("active");
             $(".five").addClass("active");
         }else if($(".five").hasClass("active")){
-            $(".forecast-box-temperature-day").css("height",`${$(".forecast-box-temperature-day-box").outerHeight() * 5}`);
+            $(".forecast-box-temperature-day").css("height",`${$(".forecast-box-temperature-day-box").outerHeight() * 7}`);
             $(".five").removeClass("active");
             $(".seven").addClass("active");
         }
