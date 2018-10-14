@@ -8,6 +8,15 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 62.5em) {
+    html {
+      font-size: 54%; } }
+  @media only screen and (max-width: 50em) {
+    html {
+      font-size: 47%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 40%; } }
 
 body {
   position: relative;
@@ -273,7 +282,7 @@ body {
     .forecast {
       top: 55rem;
       left: 0;
-      width: 100% !important; } }
+      width: 90% !important; } }
   .forecast-box-left {
     flex: 1 1 50%;
     margin: .5rem;
@@ -584,6 +593,9 @@ body {
   @media only screen and (max-width: 62.5em) {
     .photo {
       width: 30%; } }
+  @media only screen and (max-width: 37.5em) {
+    .photo {
+      display: none; } }
   .photo__box {
     height: 35rem;
     width: 100%;
@@ -708,7 +720,12 @@ body {
   flex-direction: column; }
   @media only screen and (max-width: 37.5em) {
     .content {
-      left: 0; } }
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column; } }
   .content__location-box {
     display: flex;
     flex-direction: column;
@@ -817,7 +834,7 @@ body {
     .forecast {
       top: 55rem;
       left: 0;
-      width: 100% !important; } }
+      width: 90% !important; } }
   .forecast-box-left {
     flex: 1 1 50%;
     margin: .5rem;
