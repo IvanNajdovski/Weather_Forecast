@@ -70,6 +70,10 @@
   &__form{
     display: flex;
     align-items: center;
+    @media only screen and (max-width: $bp-small){
+      width: 100%;
+      justify-content: space-evenly;
+    }
     &-label{
       color: $color-lightgrey;
       font-size: 1.6rem;
