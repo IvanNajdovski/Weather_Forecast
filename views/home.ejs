@@ -53,12 +53,13 @@
 
 
 </section>
+
 <nav class="navigation">
     <div class="navigation__box">
         <form class="navigation__form" action="/" method="POST">
             <label class="navigation__form-label" for="team_name"> <i class="fas fa-bolt"></i>
                 <span>Weather </span> </label>
-            <input class="navigation__form-input" id="team_name" type="text" name="name" placeholder="Enter Location">
+            <input class="navigation__form-input" id="team_name" type="text" name="name" value="" placeholder="Enter Location">
             <input class="navigation__form-submit" type="submit" value="Search">
         </form>
         <div class="navigation__logo">
@@ -88,14 +89,12 @@
         <div class="location__box__my">
             <h1>My Locations</h1>
             <ul class="location__item-box">
-                <li class="location__item-box-location"><a href="" class="">Skopje</a></li>
-                <li class="location__item-box-location"><a href="" class="">Resen</a></li>
-                <li class="location__item-box-location"><a href="" class="">Istanbul</a></li>
+
             </ul>
         </div>
         <div class="location__box__world">
             <h1>World Famous Locations</h1>
-            <ul class="location__item-box">
+            <ul class="location__item-box-famous">
                 <li class="location__item-box-location"><a href="" class="">New York</a></li>
                 <li class="location__item-box-location"><a href="" class="">Hong Kong</a></li>
                 <li class="location__item-box-location"><a href="" class="">Wien</a></li>
@@ -110,7 +109,7 @@
     <div class="content__location-box">
         <div class=" location-header-container">
             <h1 class="content__location-box-header"><%= geo.results[0].locations[0].adminArea5 %></h1>
-            <a class="addToMyLocations" href="" title="Add to My Location"><button class="addLocation"><i class="fas fa-globe-americas"></i></button></a>
+            <a class="addToMyLocations" href="" title="Add To My Locations"><h4 class="addLocation"><i class="fas fa-globe-americas"></i></h4></a>
         </div>
         <h3 class="content__location-box-country"><%= geo.results[0].locations[0].adminArea1  %></h3>
         <h3 class="content__location-box-country">Timezone - <%= wed.timezone  %></h3>

@@ -41,8 +41,8 @@ app.get("/", function(req,response){
     return axios.get(weatherUrl);
 }).then((response) => {
         time = timezone(response.data.currently.time * 1000).tz(response.data.timezone).format("Z z");
-        offsetH = (Number(time.split(":")[0] ) -2);
-        offset = (Number(time.split(":")[0] ) -2)*1000*60*60;
+        offsetH = (Number(time.split(":")[0] ) );
+        offset = (Number(time.split(":")[0] ) )*1000*60*60;
         sunrise = timezone(response.data.daily.data[0].sunsetTime* 1000).tz(response.data.timezone).format();
         wedRes = response.data;
     var temperature = response.data.currently.temperature;
@@ -91,8 +91,8 @@ app.post("/", function(req,response){
 }).then((response) => {
         time = timezone(response.data.currently.time * 1000).tz(response.data.timezone).format("Z z");
         sunrise = timezone(response.data.daily.data[0].sunsetTime * 1000).tz(response.data.timezone).format();
-        offsetH = (Number(time.split(":")[0] ) -2)
-        offset = (Number(time.split(":")[0] ) -2)*1000*60*60;
+        offsetH = (Number(time.split(":")[0] ) )
+        offset = (Number(time.split(":")[0] ) )*1000*60*60;
         wedRes = response.data;
     var temperature = response.data.currently.temperature;
     var apparentTemperature = response.data.currently.apparentTemperature;

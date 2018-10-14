@@ -41,6 +41,13 @@
     list-style: none;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+    &-famous{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
 
     &-location{
       font-family: $font-primary;

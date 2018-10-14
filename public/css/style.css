@@ -13,6 +13,9 @@ body {
   position: relative;
   width: 100%; }
 
+.navigation__form-one {
+  display: none; }
+
 .img-box {
   height: 3rem;
   width: 3rem;
@@ -152,6 +155,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center; }
+  .addLocation.active {
+    color: #4eb6ff; }
 
 @keyframes logo {
   0% {
@@ -594,7 +599,13 @@ body {
   .location__item-box {
     list-style: none;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    cursor: pointer; }
+    .location__item-box-famous {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer; }
     .location__item-box-location {
       font-family: "Niramit";
       color: #fff;
