@@ -5,6 +5,10 @@
   top:5rem;
   display: flex;
   flex-direction: column;
+  @media only screen and (max-width: $bp-small){
+    left: 0;
+  }
+
   &__location-box{
     display: flex;
     flex-direction: column;
@@ -99,6 +103,7 @@
         color: #fff;
         padding-right: .5rem;
         text-shadow: 3px 3px 3px #595959;
+        white-space: nowrap;
       }
       &-measure{
         height: 10rem;

@@ -8,6 +8,15 @@
   top: 5rem;
   width: 15rem;
   height: 85vh;
+  @media only screen and (max-width: $bp-small){
+    display: none;
+    background-color: rgba(0,0,0, 0.9);
+    &.active{
+      display: block;
+      z-index: 10000;
+    }
+  }
+
   &__box {
     display: flex;
     flex-direction: column;

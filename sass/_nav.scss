@@ -27,6 +27,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media only screen and (max-width: 700px){
+      padding: .5rem 1rem;
+
+    }
+    @media only screen and (max-width: $bp-small){
+      padding: .5rem 2rem;
+      justify-content: flex-start;
+    }
   }
   &__logo{
     overflow: hidden;
@@ -38,6 +46,9 @@
 
     visibility: hidden;
     opacity: 0;
+    @media only screen and (max-width: $bp-small){
+      display: none;
+    }
     &.active{
 
       opacity: 100;
@@ -63,6 +74,9 @@
       color: $color-lightgrey;
       font-size: 1.6rem;
       font-family: $font-second;
+      @media only screen and (max-width: $bp-small){
+        white-space: nowrap;
+      }
 
       & > .fas{
 
@@ -83,6 +97,9 @@
       margin: 0 1rem;
       color: #fff;
       font-size: 1.6rem;
+      @media only screen and (max-width: 700px){
+        width: 15rem;
+      }
 
     }
     &-submit{

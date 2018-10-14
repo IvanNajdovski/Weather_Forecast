@@ -209,7 +209,11 @@ $(document).ready(function () {
             $(".seven").addClass("active");
         }
 
-    })
+    });
+    $(".navigation__form-label").on("click",function(){
+        $(".location").toggleClass("active");
+    });
+
 
 
 })

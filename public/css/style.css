@@ -163,6 +163,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between; }
+    @media only screen and (max-width: 700px) {
+      .navigation__box {
+        padding: .5rem 1rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .navigation__box {
+        padding: .5rem 2rem;
+        justify-content: flex-start; } }
   .navigation__logo {
     overflow: hidden;
     width: 4rem;
@@ -172,6 +179,9 @@ body {
     justify-content: center;
     visibility: hidden;
     opacity: 0; }
+    @media only screen and (max-width: 37.5em) {
+      .navigation__logo {
+        display: none; } }
     .navigation__logo.active {
       opacity: 100;
       visibility: visible;
@@ -189,6 +199,9 @@ body {
       color: lightgray;
       font-size: 1.6rem;
       font-family: "Bai Jamjuree"; }
+      @media only screen and (max-width: 37.5em) {
+        .navigation__form-label {
+          white-space: nowrap; } }
       .navigation__form-label span {
         transform: translateX(50px); }
     .navigation__form-input {
@@ -201,6 +214,9 @@ body {
       margin: 0 1rem;
       color: #fff;
       font-size: 1.6rem; }
+      @media only screen and (max-width: 700px) {
+        .navigation__form-input {
+          width: 15rem; } }
     .navigation__form-submit {
       border: none;
       border-radius: 5px;
@@ -250,6 +266,14 @@ body {
   left: 17rem;
   display: flex;
   margin: .5rem; }
+  @media only screen and (max-width: 62.5em) {
+    .forecast {
+      flex-direction: column; } }
+  @media only screen and (max-width: 37.5em) {
+    .forecast {
+      top: 55rem;
+      left: 0;
+      width: 100% !important; } }
   .forecast-box-left {
     flex: 1 1 50%;
     margin: .5rem;
@@ -557,12 +581,18 @@ body {
   right: 0;
   width: 50%;
   z-index: 1000; }
+  @media only screen and (max-width: 62.5em) {
+    .photo {
+      width: 30%; } }
   .photo__box {
     height: 35rem;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly; }
+    @media only screen and (max-width: 62.5em) {
+      .photo__box {
+        flex-direction: column; } }
     .photo__box-left {
       height: 60%;
       flex: 0 0 25%;
@@ -570,6 +600,9 @@ body {
       background-position: center;
       background-size: cover;
       box-shadow: 2px 5px 10px 2px rgba(76, 76, 76, 0.8); }
+      @media only screen and (max-width: 62.5em) {
+        .photo__box-left {
+          display: none; } }
       .photo__box-left.active {
         flex: 0 0 40%;
         height: 100%; }
@@ -581,9 +614,23 @@ body {
       background-size: cover;
       margin: 0 2rem;
       box-shadow: 2px 5px 10px 2px rgba(76, 76, 76, 0.8); }
+      @media only screen and (max-width: 62.5em) {
+        .photo__box-center {
+          width: 80%;
+          flex: 1; } }
+      @media only screen and (max-width: 700px) {
+        .photo__box-center {
+          display: none; } }
       .photo__box-center.active {
         flex: 0 0 40%;
         height: 100%; }
+        @media only screen and (max-width: 62.5em) {
+          .photo__box-center.active {
+            width: 80%;
+            flex: 1; } }
+        @media only screen and (max-width: 700px) {
+          .photo__box-center.active {
+            display: none; } }
     .photo__box-right {
       height: 60%;
       flex: 0 0 25%;
@@ -591,6 +638,9 @@ body {
       background-position: center;
       background-size: cover;
       box-shadow: 2px 5px 10px 2px rgba(76, 76, 76, 0.8); }
+      @media only screen and (max-width: 62.5em) {
+        .photo__box-right {
+          display: none; } }
       .photo__box-right.active {
         flex: 0 0 40%;
         height: 100%; }
@@ -604,6 +654,13 @@ body {
   top: 5rem;
   width: 15rem;
   height: 85vh; }
+  @media only screen and (max-width: 37.5em) {
+    .location {
+      display: none;
+      background-color: rgba(0, 0, 0, 0.9); }
+      .location.active {
+        display: block;
+        z-index: 10000; } }
   .location__box {
     display: flex;
     flex-direction: column;
@@ -649,6 +706,9 @@ body {
   top: 5rem;
   display: flex;
   flex-direction: column; }
+  @media only screen and (max-width: 37.5em) {
+    .content {
+      left: 0; } }
   .content__location-box {
     display: flex;
     flex-direction: column;
@@ -721,7 +781,8 @@ body {
         font-weight: 300;
         color: #fff;
         padding-right: .5rem;
-        text-shadow: 3px 3px 3px #595959; }
+        text-shadow: 3px 3px 3px #595959;
+        white-space: nowrap; }
       .content__weather-box-current-measure {
         height: 10rem;
         color: #fff;
@@ -749,6 +810,14 @@ body {
   left: 17rem;
   display: flex;
   margin: .5rem; }
+  @media only screen and (max-width: 62.5em) {
+    .forecast {
+      flex-direction: column; } }
+  @media only screen and (max-width: 37.5em) {
+    .forecast {
+      top: 55rem;
+      left: 0;
+      width: 100% !important; } }
   .forecast-box-left {
     flex: 1 1 50%;
     margin: .5rem;
