@@ -169,7 +169,7 @@ $(document).ready(function () {
         //
     });
     $(document).on("click", ".location__item-box-location", function (event, e) {
-        
+
         event.preventDefault();
         $("#team_name").attr("value", `${$(this).text()}`);
         $(".navigation__form").submit();

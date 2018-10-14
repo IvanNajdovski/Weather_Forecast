@@ -47,11 +47,14 @@ app.get("/", function(req,response){
         wedRes = response.data;
     var temperature = response.data.currently.temperature;
     var apparentTemperature = response.data.currently.apparentTemperature;
-    var picLoc = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c11bf5d4dd61901c8e1fb260bf4a1ad0&text=city&content_type=screenshot&lat=${lat}&lon=${lng}&format=json&nojsoncallback=1`;
+    var picLoc = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c11bf5d4dd61901c8e1fb260bf4a1ad0&text=city&text=view&content_type=screenshot&lat=${lat}&lon=${lng}&format=json&nojsoncallback=1`;
     return axios.get(picLoc);
 }).then((res)=>{
-        var number = Math.round(Math.random()*10);
-    var url = `https://farm${res.data.photos.photo[number].farm}.staticflickr.com/${res.data.photos.photo[number].server}/${res.data.photos.photo[number].id}_${res.data.photos.photo[number].secret}.jpg`;
+        var url = [
+            `https://farm${res.data.photos.photo[0].farm}.staticflickr.com/${res.data.photos.photo[0].server}/${res.data.photos.photo[0].id}_${res.data.photos.photo[0].secret}_b.jpg`,
+            `https://farm${res.data.photos.photo[1].farm}.staticflickr.com/${res.data.photos.photo[1].server}/${res.data.photos.photo[1].id}_${res.data.photos.photo[1].secret}_b.jpg`,
+            `https://farm${res.data.photos.photo[2].farm}.staticflickr.com/${res.data.photos.photo[2].server}/${res.data.photos.photo[2].id}_${res.data.photos.photo[2].secret}_b.jpg`
+        ];
         response.render("home", {offsetH : offsetH, offset : offset, wed: wedRes, geo: geoLoc , photo: url});
 
 
@@ -96,11 +99,15 @@ app.post("/", function(req,response){
         wedRes = response.data;
     var temperature = response.data.currently.temperature;
     var apparentTemperature = response.data.currently.apparentTemperature;
-    var picLoc = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c11bf5d4dd61901c8e1fb260bf4a1ad0&content_type=screenshot&lat=${lat}&lon=${lng}&format=json&nojsoncallback=1`;
+    var picLoc = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c11bf5d4dd61901c8e1fb260bf4a1ad0&text=view&content_type=screenshot&lat=${lat}&lon=${lng}&format=json&nojsoncallback=1`;
     return axios.get(picLoc);
 }).then((res)=>{
-        var number = Math.round(Math.random()*10);
-    var url = `https://farm${res.data.photos.photo[number].farm}.staticflickr.com/${res.data.photos.photo[number].server}/${res.data.photos.photo[number].id}_${res.data.photos.photo[number].secret}_b.jpg`;
+
+    var url = [
+        `https://farm${res.data.photos.photo[0].farm}.staticflickr.com/${res.data.photos.photo[0].server}/${res.data.photos.photo[0].id}_${res.data.photos.photo[0].secret}_b.jpg`,
+        `https://farm${res.data.photos.photo[1].farm}.staticflickr.com/${res.data.photos.photo[1].server}/${res.data.photos.photo[1].id}_${res.data.photos.photo[1].secret}_b.jpg`,
+        `https://farm${res.data.photos.photo[2].farm}.staticflickr.com/${res.data.photos.photo[2].server}/${res.data.photos.photo[2].id}_${res.data.photos.photo[2].secret}_b.jpg`
+    ];
     response.render("home", {offsetH : offsetH,offset: offset, wed: wedRes, geo: geoLoc , photo: url})
 
 
