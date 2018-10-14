@@ -106,11 +106,11 @@ $(document).ready(function () {
 
         }
     });
+    // ---------------------- LOCAL STORAGE ---------------------------
     var getLocation = JSON.parse(localStorage.getItem("myLocation"));
     if(getLocation) {
         getLocation.forEach(function (val) {
             if (val === $(".content__location-box-header").text()) {
-
                 $(".addToMyLocations").attr("title", "Remove From My Locations");
                 $(".addLocation").addClass("active");
             }
@@ -120,30 +120,23 @@ $(document).ready(function () {
     }
 
     $(".addToMyLocations").on("click", function (e) {
-
         e.preventDefault();
         if ($(".addLocation").hasClass("active")) {
             e.stopImmediatePropagation();
             e.preventDefault();
-
             var start = JSON.parse(localStorage.getItem('myLocation'));
             start = start.filter(function (val) {
-
                 return val !== $(".content__location-box-header").text();
             })
             $(".location__item-box").empty();
             start.forEach(function (val) {
-
                 var text = $("<li class='location__item-box-location'></li>").text(val);
                 $(".location__item-box").append(text);
             });
             $(".addLocation").removeClass("active");
             $(".addToMyLocations").attr("title", "Add To My Locations");
             localStorage.setItem("myLocation", JSON.stringify(start));
-
-
         } else {
-
             e.preventDefault();
             var location = [];
             var start = JSON.parse(localStorage.getItem('myLocation'));
@@ -151,29 +144,36 @@ $(document).ready(function () {
                 start.forEach(function (val) {
                     location.push(val);
                 });
-
             }
-
-
             location.push(`${$(".content__location-box-header").text()}`);
             localStorage.setItem("myLocation", JSON.stringify(location));
             var location = localStorage.getItem("myLocation");
             console.log(location);
             var text = $("<li class='location__item-box-location'></li>").text($(".content__location-box-header").text());
             $(".location__item-box").append(text);
-
             $(".addLocation").addClass("active");
             $(".addToMyLocations").attr("title", "Remove From My Locations");
         }
-
         //
     });
     $(document).on("click", ".location__item-box-location", function (event, e) {
-
         event.preventDefault();
         $("#team_name").attr("value", `${$(this).text()}`);
         $(".navigation__form").submit();
     });
+
+    $(".photo-pic").on("click", function(){
+
+       $(".photo-pic").not($(this)).each( function(){
+           if($(this).hasClass("active")){
+               $(this).removeClass("active");
+           }
+       });
+
+
+
+        $(this).toggleClass("active")
+    })
 
 
 })

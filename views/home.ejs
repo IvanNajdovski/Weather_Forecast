@@ -86,9 +86,11 @@
 </nav>
 <div class="photo">
     <div class="photo__box">
-        <div class="photo__box-left" style="background-image: url(<%=photo[0]%>)"></div>
-        <div class="photo__box-center" style="background-image: url(<%=photo[1]%>)"></div>
-        <div class="photo__box-right" style="background-image: url(<%=photo[2]%>)"></div>
+        <% if(photo.length > 1){%>
+        <div class="photo__box-left photo-pic" style="background-image: url(<%=photo[0]%>)"></div>
+        <div class="photo__box-center active photo-pic" style="background-image: url(<%=photo[1]%>)"></div>
+        <div class="photo__box-right photo-pic" style="background-image: url(<%=photo[2]%>)"></div>
+        <%}%>
     </div>
 </div>
 <div class="location">
