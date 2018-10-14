@@ -118,16 +118,16 @@ $(document).ready(function () {
     });
 
     $(".addToMyLocations").on("click", function (e) {
-        e.stopImmediatePropagation()
-        e.preventDefault()
+        e.stopImmediatePropagation();
+        e.preventDefault();
         if ($(".addLocation").hasClass("active")) {
-            e.stopImmediatePropagation()
-            e.preventDefault()
+            e.stopImmediatePropagation();
+            e.preventDefault();
 
             var start = JSON.parse(localStorage.getItem('myLocation'));
             start = start.filter(function (val) {
 
-                return val !== $(".content__location-box-header").text()
+                return val !== $(".content__location-box-header").text();
             })
             $(".location__item-box").empty();
             start.forEach(function (val) {
@@ -141,14 +141,14 @@ $(document).ready(function () {
 
 
         } else {
-            e.stopImmediatePropagation()
-            e.preventDefault()
+            e.stopImmediatePropagation();
+            e.preventDefault();
             var location = [];
             var start = JSON.parse(localStorage.getItem('myLocation'));
             if (start) {
                 start.forEach(function (val) {
                     location.push(val);
-                })
+                });
 
             }
 
@@ -167,8 +167,8 @@ $(document).ready(function () {
         //
     });
     $(document).on("click", ".location__item-box-location", function (event, e) {
-        e.stopImmediatePropagation()
-        event.preventDefault()
+        e.stopImmediatePropagation();
+        event.preventDefault();
         $("#team_name").attr("value", `${$(this).text()}`);
         $(".navigation__form").submit();
     });
