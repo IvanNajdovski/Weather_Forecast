@@ -83,28 +83,28 @@
     }
   }
   }
-.tenDay{
-  padding: 2rem;
-  font-family: $font-second;
-  font-size: 1.4rem;
-  color: grey;
-  font-weight: 300;
-  &:hover{
-    color: #5f5f5f;
-  }
-  & a{
-    text-decoration: none;
-    color: inherit;
-  }
-  &.active{
-    font-size: 1.6rem;
-    color: #fff;
-    font-weight: 700;
-    &:hover{
-      color: #b3d6f5;
-    }
-  }
-}
+//.tenDay{
+//  padding: 2rem;
+//  font-family: $font-second;
+//  font-size: 1.4rem;
+//  color: grey;
+//  font-weight: 300;
+//  &:hover{
+//    color: #5f5f5f;
+//  }
+//  & a{
+//    text-decoration: none;
+//    color: inherit;
+//  }
+//  &.active{
+//    font-size: 1.6rem;
+//    color: #fff;
+//    font-weight: 700;
+//    &:hover{
+//      color: #b3d6f5;
+//    }
+//  }
+//}
 @keyframes wind {
   0%{
     transform: rotate(0);

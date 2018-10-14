@@ -153,19 +153,19 @@
         </div>
         <div class="content__weather-box-temperature">
             <div class="content__weather-box-temperature-high">
-                <h4><span>&uarr;</span><span> <%= wed.daily.data[0].temperatureHigh.toFixed(1) %> <sup>o</sup></span></h4>
+                <h4><span>&uarr;</span><span class="celsius"> <%= wed.daily.data[0].temperatureHigh.toFixed(1) %> <sup>o</sup></span></h4>
             </div>
             <div class="content__weather-box-temperature-low">
-                <h4><span>&darr;</span><span><%= wed.daily.data[0].temperatureLow.toFixed(1) %> <sup>o</sup></span></h4>
+                <h4><span>&darr;</span><span class="celsius"><%= wed.daily.data[0].temperatureLow.toFixed(1) %> <sup>o</sup></span></h4>
             </div>
         </div>
         <div class="content__weather-box-current">
             <div class="content__weather-box-current-number">
-                <h1><%= wed.currently.temperature.toFixed(1) %> <sup>o</sup></h1>
+                <h1 class="celsius"><%= wed.currently.temperature.toFixed(1) %> <sup>o</sup></h1>
             </div>
             <div class="content__weather-box-current-measure">
-                <h1>F</h1>
-                <h1>C</h1>
+                <h1 class="convertF">F</h1>
+                <h1 class="convertC">C</h1>
             </div>
         </div>
 
@@ -216,7 +216,7 @@
 
                         </div>
 
-                        <p><%= wed.hourly.data[i].temperature.toFixed(0)%> <sup>o</sup></p>
+                        <p class="celsius"><%= wed.hourly.data[i].temperature.toFixed(0)%> <sup>o</sup></p>
                     </div>
 
 
@@ -270,8 +270,8 @@
                         <p><%=(wed.daily.data[i].precipProbability * 100).toFixed(0)%>%</p>
                     </div>
                     <div class="box-high-low">
-                        <h1><%= wed.daily.data[i].temperatureHigh.toFixed(0)%> <sup>o</sup></h1>
-                        <h1><%= wed.daily.data[i].temperatureLow.toFixed(0)%> <sup>o</sup></h1>
+                        <h1 class="celsius"><%= wed.daily.data[i].temperatureHigh.toFixed(0)%> <sup>o</sup></h1>
+                        <h1 class="celsius"><%= wed.daily.data[i].temperatureLow.toFixed(0)%> <sup>o</sup></h1>
                     </div>
                 </div>
 
@@ -280,8 +280,8 @@
 
             </div>
             <div class="forecast-day-box">
-                <h1 class="fiveDay active"><a class="fiveDay-link" href="">5 day</a></h1>
-                <h1 class="tenDay"><a class="tenDay-link" href="">10 day</a></h1>
+                <h1 class="fiveDay five "><a class="fiveDay-link" href="">5 day</a></h1>
+                <h1 class="fiveDay seven active"><a class="tenDay-link" href="">7 day</a></h1>
             </div>
 
         </div>
@@ -409,7 +409,7 @@
                     </div>
                 </div>
                 <div class="forecast-box-details-content-text">
-                    <h1>Feels like <span><%= (wed.currently.apparentTemperature).toFixed(1) %> <sup>o</sup></span></h1>
+                    <h1>Feels like <span class="celsius"><%= (wed.currently.apparentTemperature).toFixed(1) %> <sup>o</sup></span></h1>
                     <h1>Humidity <span><%= (wed.currently.humidity * 100).toFixed(1) %> %</span></h1>
                     <h1>Visibility <span><%= wed.currently.visibility %> km</span></h1>
                     <h1>UV Index <span class="uvIndex"><%= wed.daily.data[0].uvIndex %> <span class="uvIndex-span"></span></span></h1>

@@ -169,10 +169,46 @@ $(document).ready(function () {
                $(this).removeClass("active");
            }
        });
-
-
-
         $(this).toggleClass("active")
+    });
+    // --------------- CONVERT FERENHIT TO CELSIUS------------------------
+    $(".convertF").on("click",function(){
+        if($(".celsius")){
+            $(".celsius").each(function(){
+              var temp = $(this).text().split(" ")[0];
+              $(this).text(((temp * 1.8) + 32).toFixed(1));
+                $(this).append("<sup> o</sup>")
+              $(this).removeClass("celsius");
+              $(this).addClass("ferenheit")
+            })
+        }
+    })
+    $(".convertC").on("click",function(){
+        if($(".ferenheit")){
+            $(".ferenheit").each(function(){
+                var temp = $(this).text().split(" ")[0];
+
+                $(this).text(((temp - 32)/ 1.8 ).toFixed(1));
+                $(this).append("<sup> o</sup>")
+                $(this).removeClass("ferenheit");
+                $(this).addClass("celsius");
+            })
+        }
+    });
+
+    // -----------------------5DAY 10DAY------------------
+    $(".fiveDay").on("click",function(e){
+        e.preventDefault()
+        if($(".seven").hasClass("active")){
+            $(".forecast-box-temperature-day").css("height",`${$(".forecast-box-temperature-day-box").outerHeight() * 7}`);
+            $(".seven").removeClass("active");
+            $(".five").addClass("active");
+        }else if($(".five").hasClass("active")){
+            $(".forecast-box-temperature-day").css("height",`${$(".forecast-box-temperature-day-box").outerHeight() * 5}`);
+            $(".five").removeClass("active");
+            $(".seven").addClass("active");
+        }
+
     })
 
 
