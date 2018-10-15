@@ -18,7 +18,7 @@
 </head>
 <body>
 <section class="background">
-    <% if ( new Date((wed.currently.time * 1000)+ offset).getHours()  > new Date((wed.daily.data[0].sunriseTime * 1000)+offset).getHours() && new Date((wed.currently.time * 1000)+ offset).getHours()  <= new Date((wed.daily.data[0].sunsetTime * 1000)+ offset).getHours()  ){%>
+    <% if ( new Date((wed.currently.time * 1000)+ offset).getHours()  >= new Date((wed.daily.data[0].sunriseTime * 1000)+offset).getHours() && new Date((wed.currently.time * 1000)+ offset).getHours()  < new Date((wed.daily.data[0].sunsetTime * 1000)+ offset).getHours()  ){%>
 
         <% if ( wed.currently.icon === "rain"){%>
     <div class="background__box rain__day"></div>
@@ -30,13 +30,22 @@
     <div class="background__box partly__day"></div>
         <%}else if( wed.currently.icon === "cloudy"){%>
     <div class="background__box cloudy__day"></div>
+    <%}else if( wed.currently.icon === "clear-night"){%>
+    <div class="background__box clear__night"></div>
+    <%}else if( wed.currently.icon === "partly-cloudy-night"){%>
+    <div class="background__box partly__night"></div>
         <%}else if( wed.currently.icon === "snow"){%>
     <div class="background__box snow__day"></div>
         <%}%>
 
     <%}else{%>
+
     <% if ( wed.currently.icon === "rain"){%>
     <div class="background__box rain__night"></div>
+    <%}else if( wed.currently.icon === "clear-day"){%>
+    <div class="background__box clear__day"></div>
+    <%}else if( wed.currently.icon === "partly-cloudy-day"){%>
+    <div class="background__box partly__day"></div>
     <%}else if( wed.currently.icon === "wind"){%>
     <div class="background__box wind__day"></div>
     <%}else if( wed.currently.icon === "clear-night"){%>
