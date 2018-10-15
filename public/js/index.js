@@ -175,8 +175,10 @@ $(document).ready(function () {
     $(".convertF").on("click",function(){
         if($(".celsius")){
             $(".celsius").each(function(){
+                console.log($(this).text())
               var temp = $(this).text().split(" ")[0];
-              $(this).text(((temp * 1.8) + 32).toFixed(1));
+              console.log(temp)
+              $(this).text(((temp * 1.8 )+ 32 ).toFixed(1));
                 $(this).append("<sup> o</sup>")
               $(this).removeClass("celsius");
               $(this).addClass("ferenheit")
@@ -186,6 +188,7 @@ $(document).ready(function () {
     $(".convertC").on("click",function(){
         if($(".ferenheit")){
             $(".ferenheit").each(function(){
+                console.log($(this).text())
                 var temp = $(this).text().split(" ")[0];
 
                 $(this).text(((temp - 32)/ 1.8 ).toFixed(1));
