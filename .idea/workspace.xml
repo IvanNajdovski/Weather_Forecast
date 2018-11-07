@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c5185c21-4c03-42e3-a879-3b60a821807a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/views/home.ejs" afterPath="$PROJECT_DIR$/views/home.ejs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,9 +28,12 @@
           <file leaf-file-name="home.ejs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/home.ejs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="147">
-                  <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-                  <folding />
+                <state relative-caret-position="5050">
+                  <caret line="500" column="0" lean-forward="false" selection-start-line="500" selection-start-column="0" selection-end-line="500" selection-end-column="67" />
+                  <folding>
+                    <element signature="e#8504#8510#1#HTML" expanded="true" />
+                    <element signature="e#8725#8731#1#HTML" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -80,11 +82,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/js/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
+                <state relative-caret-position="805">
                   <caret line="180" column="59" lean-forward="false" selection-start-line="180" selection-start-column="59" selection-end-line="180" selection-end-column="59" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/package.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="147">
+                  <caret line="7" column="53" lean-forward="false" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
                   <folding />
                 </state>
               </provider>
@@ -229,11 +241,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -364,12 +376,14 @@
       <workItem from="1539506984086" duration="11867000" />
       <workItem from="1539543943110" duration="6288000" />
       <workItem from="1539605106732" duration="1496000" />
-      <workItem from="1539607021446" duration="14000" />
+      <workItem from="1539607021446" duration="114000" />
+      <workItem from="1539619851724" duration="55000" />
+      <workItem from="1539791501171" duration="21000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162848000" />
+    <option name="totallyTimeSpent" value="163024000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -382,8 +396,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -393,8 +407,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -433,7 +447,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="37" />
-          <folding />
+          <folding>
+            <element signature="e#8504#8510#1#HTML" expanded="true" />
+            <element signature="e#8725#8731#1#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -487,13 +504,6 @@
         <state relative-caret-position="336">
           <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="31" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="53" lean-forward="false" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -615,7 +625,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="805">
           <caret line="180" column="59" lean-forward="false" selection-start-line="180" selection-start-column="59" selection-end-line="180" selection-end-column="59" />
           <folding />
         </state>
@@ -623,8 +633,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/home.ejs">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5050">
+          <caret line="500" column="0" lean-forward="false" selection-start-line="500" selection-start-column="0" selection-end-line="500" selection-end-column="67" />
+          <folding>
+            <element signature="e#8504#8510#1#HTML" expanded="true" />
+            <element signature="e#8725#8731#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
-          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <caret line="7" column="53" lean-forward="false" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
           <folding />
         </state>
       </provider>
