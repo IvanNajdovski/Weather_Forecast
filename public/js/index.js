@@ -91,9 +91,6 @@ $(document).ready(function () {
 
 
         if (elemBottom > docViewTop && elemTop < docViewBottom - 200) {
-
-
-            console.log(currentHour, sunrise, sunset, width)
             $(".forecast-box-sunmoon-content-box-background").css("width", `${width}%`);
             $(".forecast-box-sunmoon-content-box-background").css("transition", "width 2s");
             $(".forecast-box-sunmoon-content-box-sun").css("transform", `translate(-5rem, -5rem) rotate(${rotate}deg`);

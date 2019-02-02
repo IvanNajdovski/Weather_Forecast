@@ -19,7 +19,6 @@
 <body>
 <section class="background">
     <% if ( new Date((wed.currently.time * 1000)+ offset).getHours()  >= new Date((wed.daily.data[0].sunriseTime * 1000)+offset).getHours() && new Date((wed.currently.time * 1000)+ offset).getHours()  < new Date((wed.daily.data[0].sunsetTime * 1000)+ offset).getHours()  ){%>
-
         <% if ( wed.currently.icon === "rain"){%>
     <div class="background__box rain__day"></div>
         <%}else if( wed.currently.icon === "wind"){%>

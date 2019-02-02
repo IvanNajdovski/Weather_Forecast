@@ -269,7 +269,7 @@ body {
   .background__box.cloudy__day {
     background-image: url("../img/background__heavy__clouds__day.jpg"); }
   .background__box.cloudy__night {
-    background-image: url("../img/background__heavy__fair__night.gif"); }
+    background-image: url("../img/background__heavy__clouds__night.jpg"); }
 
 .forecast {
   width: 80vw;
